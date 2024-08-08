@@ -38,5 +38,49 @@ export const componentsData = [
                 link: "link here"
             }
         ]
-    }
+    },
+    {
+        category: "Indicators",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: "code here",
+                link: "link here"
+            }
+        ]
+    },
+    {
+        category: "Timeline",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: "code here",
+                link: "link here"
+            }
+        ]
+    },
+    {
+        category: "Music Player",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: "code here",
+                link: "link here"
+            }
+        ]
+    },
+    {
+        category: "Chips",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: "code here",
+                link: "link here"
+            }
+        ]
+    },
 ];

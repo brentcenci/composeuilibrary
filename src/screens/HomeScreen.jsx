@@ -1,11 +1,13 @@
-import ComponentsList from "../components/ComponentsList.jsx";
+import HeaderSection from "../components/homescreencomponents/HeaderSection.jsx";
+import ComponentsListSection from "../components/homescreencomponents/ComponentsListSection.jsx";
 
 const HomeScreen = () => {
   return (
-      <div>
-          <h1>Components List:</h1>
-          <ComponentsList/>
-      </div>
+      <>
+          <HeaderSection/>
+          <ComponentsListSection/>
+          <ComponentsListSection/>
+      </>
   )
 };
 
