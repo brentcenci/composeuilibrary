@@ -1,9 +1,13 @@
 import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-const Card = ({title = "Card"}) => {
+const Card = ({group}) => {
+
+    // eslint-disable-next-line react/prop-types
+    const title = group.category
+
     return (
-        <div className="text-gray-900">
+        <a className="text-gray-900" href={`/component/${title}`}>
             <div className="h-64 bg-transparent rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg group">
                 <div
                     className="bg-gray-100 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 group-hover:border-gray-300">
@@ -23,7 +27,7 @@ const Card = ({title = "Card"}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     );
 };
 

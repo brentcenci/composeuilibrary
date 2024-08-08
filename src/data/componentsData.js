@@ -1,6 +1,7 @@
 export const componentsData = [
     {
         category: "Cards",
+        categoryDescription: "Versatile containers for displaying grouped content, such as text, images, and actions, in a clean, organized format.",
         components: [
             {
                 title: "Basic Card",
@@ -30,6 +31,7 @@ export const componentsData = [
     },
     {
         category: "Authentication",
+        categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
         components: [
             {
                 title: "Basic Authentication",
@@ -41,6 +43,7 @@ export const componentsData = [
     },
     {
         category: "Indicators",
+        categoryDescription: "Visual cues like progress bars, spinners, and badges that convey status, progress, or notifications to the user.",
         components: [
             {
                 title: "Basic Authentication",
@@ -52,6 +55,7 @@ export const componentsData = [
     },
     {
         category: "Timeline",
+        categoryDescription: "Sequential layouts for showcasing chronological events or steps in a process, often used in history or progress tracking.",
         components: [
             {
                 title: "Basic Authentication",
@@ -63,6 +67,7 @@ export const componentsData = [
     },
     {
         category: "Music Player",
+        categoryDescription: "Interfaces for controlling audio playback, featuring controls for play, pause, skip, volume, and track information display.",
         components: [
             {
                 title: "Basic Authentication",
@@ -74,6 +79,7 @@ export const componentsData = [
     },
     {
         category: "Chips",
+        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
         components: [
             {
                 title: "Basic Authentication",

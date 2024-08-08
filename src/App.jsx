@@ -4,6 +4,7 @@ import HomeScreen from "./screens/HomeScreen.jsx";
 import FooterSection from "./components/FooterSection.jsx";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ComponentsScreen from "./screens/ComponentsScreen.jsx";
+import ScreensScreen from "./screens/ScreensScreen.jsx";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
             <TopNavBar/>
             <Routes>
                 <Route path="/" element={<HomeScreen/>}/>
-                <Route path="/component/:category:id" element={<ComponentsScreen />}/>
+                <Route path="/component/:category" element={<ComponentsScreen />}/>
+                <Route path="/screen/:screen" element={<ScreensScreen />}/>
             </Routes>
             <FooterSection/>
         </Router>

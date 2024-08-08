@@ -9,7 +9,7 @@ const ComponentsListSection = () => {
                 <div className="grid grid-cols-2">
                     {componentsData.map((group, index) => (
                         <div key={index} className="p-4">
-                            <Card title={group.category}/>
+                            <Card group={group}/>
                         </div>
                     ))}
                 </div>
