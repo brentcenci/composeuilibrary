@@ -6,25 +6,57 @@ export const componentsData = [
             {
                 title: "Basic Card",
                 description: "Basic Card",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             },
             {
                 title: "Basic Card with Image",
                 description: "Basic Card with Image",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             },
             {
                 title: "Card with Badges",
                 description: "Card with Badges",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             },
             {
                 title: "Video Card",
                 description: "Video Card",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
@@ -36,7 +68,15 @@ export const componentsData = [
             {
                 title: "Basic Authentication",
                 description: "Basic Authentication",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
@@ -48,7 +88,15 @@ export const componentsData = [
             {
                 title: "Basic Authentication",
                 description: "Basic Authentication",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
@@ -60,7 +108,15 @@ export const componentsData = [
             {
                 title: "Basic Authentication",
                 description: "Basic Authentication",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
@@ -72,7 +128,15 @@ export const componentsData = [
             {
                 title: "Basic Authentication",
                 description: "Basic Authentication",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
@@ -84,7 +148,15 @@ export const componentsData = [
             {
                 title: "Basic Authentication",
                 description: "Basic Authentication",
-                code: "code here",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
                 link: "link here"
             }
         ]
