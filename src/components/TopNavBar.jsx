@@ -1,9 +1,9 @@
 const TopNavBar = () => {
     return (
-        <nav className="border-b-gray-200 bg-white">
+        <nav className="border-b-gray-200 bg-white text-gray-900">
             <div className="w-full flex flex-wrap items-center justify-between p-4">
                 <a href="/">
-                    <h1 className="font-BowlbyOne text-xl">ComposeLib</h1>
+                    <h1 className="font-BowlbyOne text-xl group hover:text-gray-700">Compose<span className="text-blue-700 group-hover:text-blue-500">Lib</span></h1>
                 </a>
                 <button
                     data-collapse-toggle="navbar-default"

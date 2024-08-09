@@ -8,8 +8,8 @@ const FooterSection = ( ) => {
                     <div className="sm:flex sm:items-center sm:justify-between">
                         <a href="/"
                            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                            <span
-                                className="self-center font-BowlbyOne text-xl whitespace-nowrap dark:text-white">ComposeLib</span>
+                            <h1 className="font-BowlbyOne text-xl group hover:text-gray-700">Compose<span
+                                className="text-blue-700 group-hover:text-blue-500">Lib</span></h1>
                         </a>
                         <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                             <li>
