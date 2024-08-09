@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import { componentsData } from '../../data/componentsData.js';
 import CodeSnippet from "../CodeSnippet.jsx";
+import ComponentShowcase from "../ComponentShowcase.jsx";
 
 const ComponentsBody = () => {
     const { category } = useParams()
@@ -14,7 +15,10 @@ const ComponentsBody = () => {
                     <div key={index} className="space-y-2">
                         <h1 className="text-2xl font-semibold">{item.title}</h1>
                         <h2 className="text-lg">{item.description}</h2>
-                        <CodeSnippet code={item.code} />
+                        <CodeSnippet
+                            code={item.code} />
+                        <ComponentShowcase
+                            url={"https://manuel-martos.github.io/MediumCompose/?sample=emojis"}/>
                     </div>
                 ))}
             </div>
