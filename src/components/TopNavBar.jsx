@@ -17,15 +17,21 @@ const TopNavBar = () => {
                 </button>
                 <div className="hidden md:block w-full md:w-auto" id="navbar-default">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-6 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-                        <li>
-                            Home
-                        </li>
-                        <li>
-                            Components
-                        </li>
-                        <li>
-                            Screens
-                        </li>
+                        <a href="/">
+                            <li>
+                                Home
+                            </li>
+                        </a>
+                        <a href="/#components">
+                            <li>
+                                Components
+                            </li>
+                        </a>
+                        <a href="/#screens">
+                            <li>
+                                Screens
+                            </li>
+                        </a>
                     </ul>
                 </div>
             </div>

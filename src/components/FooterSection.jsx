@@ -13,13 +13,13 @@ const FooterSection = ( ) => {
                         </a>
                         <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                             <li>
-                                <a href="#" className="hover:underline me-4 md:me-6">Home</a>
+                                <a href="/#" className="hover:underline me-4 md:me-6">Home</a>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline me-4 md:me-6">Components</a>
+                                <a href="/#components" className="hover:underline me-4 md:me-6">Components</a>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline">Screens</a>
+                                <a href="/#screens" className="hover:underline">Screens</a>
                             </li>
                         </ul>
                     </div>
