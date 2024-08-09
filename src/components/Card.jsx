@@ -6,6 +6,7 @@ const Card = ({group}) => {
     // eslint-disable-next-line react/prop-types
     const title = group.category
 
+
     return (
         <a className="text-gray-900" href={`/component/${title}`}>
             <div className="h-64 bg-transparent rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg group">

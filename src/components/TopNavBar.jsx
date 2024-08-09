@@ -1,7 +1,7 @@
 const TopNavBar = () => {
     return (
         <nav className="border-b-gray-200 bg-white">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between p-4">
+            <div className="w-full flex flex-wrap items-center justify-between p-4">
                 <a href="/">
                     <h1 className="font-BowlbyOne text-xl">ComposeLib</h1>
                 </a>
