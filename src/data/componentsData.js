@@ -15,7 +15,8 @@ fun ExampleComponent(modifier: Modifier) {
         Text("world")
     }
 }`,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard",
+                height: 200
             },
             {
                 title: "Basic Card with Image",
@@ -29,10 +30,25 @@ fun ExampleComponent(modifier: Modifier) {
         Text("world")
     }
 }`,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecard"
             },
             {
                 title: "Card with Badges",
+                description: "This card features some simple chips and badges to showcase certain properties; " +
+                    "such as whether the card is depicting a new release item, a sale, or even categories such as vegan or vegetarian. " +
+                    "Use this to call to attention these properties on the main card.",
+                code:
+                    `@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}`,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecardwithbadges"
+            },
+            {
+                title: "Card with Button",
                 description: "This card features some simple chips and badges to showcase certain properties; " +
                     "such as whether the card is depicting a new release item, a sale, or even categories such as vegan or vegetarian. " +
                     "Use this to call to attention these properties on the main card.",
@@ -44,7 +60,22 @@ fun ExampleComponent(modifier: Modifier) {
         Text("world")
     }
 }`,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecardwithbutton"
+            },
+            {
+                title: "Small Card with Side Image",
+                description: "This is a simple example card design inspired by Google's YouTube video cards; " +
+                    "with a thumbnail image, time-stamp, title and statistics summary text. " +
+                    "This can be of use if you plan to incorporate video browsing into your application.",
+                code:
+                    `@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}`,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=cardwithsideimage"
             },
             {
                 title: "Video Card",
@@ -59,8 +90,8 @@ fun ExampleComponent(modifier: Modifier) {
         Text("world")
     }
 }`,
-                link: "link here"
-            }
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=cardwithsideimage"
+            },
         ]
     },
     {
@@ -79,7 +110,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
             }
         ]
     },
@@ -99,7 +130,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
             }
         ]
     },
@@ -119,7 +150,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
             }
         ]
     },
@@ -139,7 +170,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
             }
         ]
     },
@@ -159,7 +190,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "link here"
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
             }
         ]
     },

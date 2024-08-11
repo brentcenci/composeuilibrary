@@ -19,7 +19,7 @@ const ComponentsBody = () => {
                         <CodeSnippet
                             code={item.code} />
                         <ComponentShowcase
-                            url={"https://manuel-martos.github.io/MediumCompose/?sample=emojis"}/>
+                            url={item.link} height={item.height}/>
                     </div>
                 ))}
             </div>
