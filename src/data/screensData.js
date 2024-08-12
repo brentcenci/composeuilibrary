@@ -1,6 +1,6 @@
 export const screensData = [
     {
-        category: "Cards",
+        category: "Authentication",
         categoryDescription: "Versatile containers for displaying grouped content, such as text, images, and actions, in a clean, organized format.",
         components: [
             {
@@ -94,7 +94,7 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
-        category: "Authentication",
+        category: "Headers",
         categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
         components: [
             {
@@ -114,68 +114,8 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
-        category: "Indicators",
+        category: "Profiles",
         categoryDescription: "Visual cues like progress bars, spinners, and badges that convey status, progress, or notifications to the user.",
-        components: [
-            {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
-                code: `
-@Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
-    }
-}
-                `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
-            }
-        ]
-    },
-    {
-        category: "Timeline",
-        categoryDescription: "Sequential layouts for showcasing chronological events or steps in a process, often used in history or progress tracking.",
-        components: [
-            {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
-                code: `
-@Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
-    }
-}
-                `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
-            }
-        ]
-    },
-    {
-        category: "Music Player",
-        categoryDescription: "Interfaces for controlling audio playback, featuring controls for play, pause, skip, volume, and track information display.",
-        components: [
-            {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
-                code: `
-@Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
-    }
-}
-                `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
-            }
-        ]
-    },
-    {
-        category: "Chips",
-        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
         components: [
             {
                 title: "Basic Authentication",

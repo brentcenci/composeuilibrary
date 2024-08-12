@@ -1,6 +1,6 @@
 import Iframe from "react-iframe";
 
-const ComponentShowcase = ({url, height}) => {
+const ComponentShowcase = ({url}) => {
     return (
         <>
             <Iframe
