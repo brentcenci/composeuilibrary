@@ -2,6 +2,7 @@ export const componentsData = [
     {
         category: "Cards",
         categoryDescription: "Versatile containers for displaying grouped content, such as text, images, and actions, in a clean, organized format.",
+        thumbnail: "src/assets/ThumbnailCard.png",
         components: [
             {
                 title: "Basic Card",

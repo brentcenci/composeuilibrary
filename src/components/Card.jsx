@@ -5,6 +5,7 @@ const Card = ({group}) => {
 
     // eslint-disable-next-line react/prop-types
     const title = group.category
+    const thumbnailSrc = group.thumbnail ? group.thumbnail : 'https://t3.ftcdn.net/jpg/08/19/97/20/360_F_819972032_ww39Fur0hmIeS2UFAuWGl5xBqpOR5Eou.jpg';
 
 
     return (
@@ -23,7 +24,7 @@ const Card = ({group}) => {
                 <div className="flex justify-center items-center h-52">
                     <div className="relative h-4/6 w-56">
                         <img
-                            src="https://t3.ftcdn.net/jpg/08/19/97/20/360_F_819972032_ww39Fur0hmIeS2UFAuWGl5xBqpOR5Eou.jpg"
+                            src={thumbnailSrc}
                             className="box-border block overflow-hidden"/>
                     </div>
                 </div>
