@@ -231,6 +231,7 @@ fun VideoCard(title: String, summary: String, length: String, imageUrl: String, 
     {
         category: "Authentication",
         categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
+        thumbnail: "src/assets/ThumbnailAuthentication.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -249,8 +250,9 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
-        category: "Indicators",
-        categoryDescription: "Visual cues like progress bars, spinners, and badges that convey status, progress, or notifications to the user.",
+        category: "Toggles",
+        categoryDescription: "Custom designed toggle switches to impress your users over the default.",
+        thumbnail: "src/assets/ThumbnailToggles.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -271,6 +273,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Timeline",
         categoryDescription: "Sequential layouts for showcasing chronological events or steps in a process, often used in history or progress tracking.",
+        thumbnail: "src/assets/ThumbnailTimeline.png",
         components: [
             {
                 title: "Basic Authentication",

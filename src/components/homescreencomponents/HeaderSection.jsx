@@ -7,32 +7,37 @@ const HeaderSection = () => {
                 <h2 className="text-xl">Browse this free, open-source library of reusable components and sample screen
                     designs for any Android or Compose Multiplatform projects you are undertaking</h2>
             </div>
-            <div className="flex flex-row justify-center space-x-4 md:space-x-12 mx-auto py-10 text-gray-900">
-                <div className="flex flex-row">
-                    <h1 className="text-7xl font-BowlbyOne">1</h1>
+            <div className="flex flex-row justify-center space-x-4 md:space-x-12 mx-auto md:mx-20 py-10 text-gray-900">
+                <div className="flex flex-row max-w-80">
+                    <h1 className="text-7xl font-BowlbyOne text-blue-700">1</h1>
                     <div className="flex flex-col">
                         <h1 className="font-bold">Find Component</h1>
-                        <h2>Small image / diagram</h2>
+                        <h2>Browse the collection of free components to find what you're looking for.</h2>
+
                     </div>
                 </div>
-                <div className="flex flex-row">
-                    <h1 className="text-7xl font-BowlbyOne me-2">2</h1>
+                <div className="flex flex-row max-w-80">
+                <h1 className="text-7xl font-BowlbyOne me-2 text-blue-700">2</h1>
                     <div className="flex flex-col">
-                        <h1 className="font-bold">Test Demo</h1>
-                        <h2>Small image / diagram</h2>
+                        <h1 className="font-bold">View Demo</h1>
+                        <h2>See a real and live demonstration of the component right in your browser.</h2>
+
+
                     </div>
                 </div>
-                <div className="flex flex-row">
-                    <h1 className="text-7xl font-BowlbyOne me-2">3</h1>
+                <div className="flex flex-row max-w-80">
+                    <h1 className="text-7xl font-BowlbyOne me-2 text-blue-700">3</h1>
                     <div className="flex flex-col">
                         <h1 className="font-bold">Copy Code</h1>
-                        <h2>Small image / diagram</h2>
+                        <h2>Take the code straight into your project and modify however you please!</h2>
+
+
                     </div>
                 </div>
             </div>
         </>
-)
-    ;
+    )
+        ;
 };
 
 export default HeaderSection;
