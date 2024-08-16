@@ -292,8 +292,9 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
-        category: "Music Player",
+        category: "Media Control",
         categoryDescription: "Interfaces for controlling audio playback, featuring controls for play, pause, skip, volume, and track information display.",
+        thumbnail: "src/assets/ThumbnailMediaControl.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -312,8 +313,72 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
-        category: "Chips",
+        category: "Badges",
         categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        thumbnail: "src/assets/ThumbnailBadges.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
+        category: "Breadcrumbs",
+        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        thumbnail: "src/assets/ThumbnailBreadcrumbs.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
+        category: "Comments and Reviews",
+        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        thumbnail: "src/assets/ThumbnailCommentsReview.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
+        category: "Search Bars and Autocomplete",
+        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        thumbnail: "src/assets/ThumbnailSearchbarsAndAutocomplete.png",
         components: [
             {
                 title: "Basic Authentication",
