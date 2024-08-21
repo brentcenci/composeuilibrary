@@ -229,6 +229,83 @@ fun VideoCard(title: String, summary: String, length: String, imageUrl: String, 
         ]
     },
     {
+        category: "Comments and Reviews",
+        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        thumbnail: "src/assets/ThumbnailCommentsReview.png",
+        components: [
+            {
+                title: "Basic Comment",
+                description: "Description for a Basic Comment Component",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=comment"
+            },
+            {
+                title: "Alternative Comment",
+                description: "Description for a Alternative Comment Component",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=commentstyletwo"
+            },
+            {
+                title: "Star Rating Bar",
+                description: "Description for a Star Rating Bar",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingbar"
+            },
+            {
+                title: "Review Post with Star Rating Bar",
+                description: "Description for a Review Post with Star Rating Bar",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingpostreview"
+            },
+            {
+                title: "Review with a Star Rating",
+                description: "Description for a Review with Star Rating Component",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingreview"
+            },
+        ]
+    },
+    {
         category: "Authentication",
         categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
         thumbnail: "src/assets/ThumbnailAuthentication.png",
@@ -337,27 +414,6 @@ fun ExampleComponent(modifier: Modifier) {
         category: "Breadcrumbs",
         categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
         thumbnail: "src/assets/ThumbnailBreadcrumbs.png",
-        components: [
-            {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
-                code: `
-@Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
-    }
-}
-                `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
-            }
-        ]
-    },
-    {
-        category: "Comments and Reviews",
-        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
-        thumbnail: "src/assets/ThumbnailCommentsReview.png",
         components: [
             {
                 title: "Basic Authentication",
