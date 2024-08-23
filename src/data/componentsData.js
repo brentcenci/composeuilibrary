@@ -240,10 +240,41 @@ fun VideoCard(title: String, summary: String, length: String, imageUrl: String, 
                     "The component features a user icon image, textfield and submission button.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun Comment(userImage: String) {
+    val imageLoader = remember { ImageLoader(context = PlatformContext.INSTANCE) }
+    val textValue = remember { mutableStateOf("") }
+    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
+        Column(
+            modifier = Modifier.width(400.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.width(400.dp)
+            ) {
+                AsyncImage(
+                    model = userImage,
+                    contentDescription = "Placeholder",
+                    imageLoader = imageLoader,
+                    modifier = Modifier.size(48.dp).clip(RoundedCornerShape(50)),
+                    contentScale = ContentScale.Crop
+                )
+                OutlinedTextField(
+                    value = textValue.value,
+                    onValueChange = { textValue.value = it },
+                    shape = RoundedCornerShape(20.dp),
+                    placeholder = { Text("Add comment...") },
+                    /*colors = TextFieldDefaults.colors(focusedContainerColor = Color.LightGray.copy(alpha = 0.2f), unfocusedContainerColor = Color.LightGray.copy(alpha=0.4f)),*/
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+            Row {
+                Spacer(modifier = Modifier.weight(1f))
+                Button(onClick = {}) {
+                    Text("Post")
+                }
+            }
+        }
     }
 }
                 `,
@@ -256,10 +287,40 @@ fun ExampleComponent(modifier: Modifier) {
                     "You may want to use this to highlight the user's details, and as such should be paired with a posted comment component featuring such details.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun CommentStyleTwo(userImage: String, userName: String) {
+    val imageLoader = remember { ImageLoader(context = PlatformContext.INSTANCE) }
+    val textValue = remember { mutableStateOf("") }
+    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
+        Column(
+            modifier = Modifier.width(400.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.width(400.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                AsyncImage(
+                    model = userImage,
+                    contentDescription = "Placeholder",
+                    imageLoader = imageLoader,
+                    modifier = Modifier.size(32.dp).clip(RoundedCornerShape(50)),
+                    contentScale = ContentScale.Crop
+                )
+                Text(text = userName, fontSize = 20.sp, color = Color.DarkGray)
+                Spacer(modifier = Modifier.weight(1f))
+                Button(onClick = {}) {
+                    Text("Post")
+                }
+            }
+            OutlinedTextField(
+                value = textValue.value,
+                onValueChange = { textValue.value = it },
+                shape = RoundedCornerShape(20.dp),
+                placeholder = { Text("Add comment...") },
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
     }
 }
                 `,
@@ -272,11 +333,55 @@ fun ExampleComponent(modifier: Modifier) {
                     "This sort of feature fits in any kind of review scenario, where you need to query what rating a user would give toward a product or service.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun StarRatingBar(
+    modifier: Modifier = Modifier,
+    size: Dp = 48.dp,
+    ratingState: MutableState<Int> = remember { mutableIntStateOf(1) },
+    imageVector: ImageVector = Icons.Default.Star,
+    selectedColor: Color = Color.Yellow,
+    unselectedColor: Color = Color.LightGray,
+    clickable: Boolean = true,
+) {
+    Row(modifier = modifier) {
+        for (value in 1..5) {
+            StarIcon(
+                size = size,
+                ratingState = ratingState,
+                imageVector = imageVector,
+                ratingValue = value,
+                selectedColor = selectedColor,
+                unselectedColor = unselectedColor,
+                clickable = clickable
+            )
+        }
     }
+}
+
+@Composable
+fun StarIcon(
+    size: Dp,
+    ratingState: MutableState<Int>,
+    imageVector: ImageVector,
+    ratingValue: Int,
+    selectedColor: Color,
+    unselectedColor: Color,
+    clickable: Boolean = true
+) {
+    val tint by animateColorAsState(
+        targetValue = if (ratingValue <= ratingState.value) selectedColor else unselectedColor,
+        label = ""
+    )
+
+    Icon(
+        imageVector = imageVector,
+        contentDescription = null,
+        modifier = Modifier
+            .size(size)
+            .clickable(enabled = clickable) {
+                ratingState.value = ratingValue
+            },
+        tint = tint
+    )
 }
                 `,
                 link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingbar"
@@ -288,10 +393,37 @@ fun ExampleComponent(modifier: Modifier) {
                     "This kind of component may be particularly valuable as a modal, which appears after the user has made a purchase or completed some kind of media.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun StarRatingPostReview(title: String, subtitle: String) {
+    val textValue = remember { mutableStateOf("") }
+    Box(modifier = Modifier.width(400.dp).background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
+            Text(
+                text = title,
+                fontSize = 24.sp,
+                color = Color.DarkGray,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = subtitle,
+                fontSize = 16.sp,
+                color = Color.DarkGray,
+                textAlign = TextAlign.Center
+            )
+            StarRatingBar(modifier = Modifier.align(Alignment.CenterHorizontally), selectedColor = Color.Blue)
+            OutlinedTextField(
+                value = textValue.value,
+                onValueChange = { textValue.value = it },
+                shape = RoundedCornerShape(20.dp),
+                placeholder = { Text("Leave a comment...") },
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Row {
+                Spacer(modifier = Modifier.weight(1f))
+                Button(onClick = { }) {
+                    Text("Submit Review")
+                }
+            }
+        }
     }
 }
                 `,
@@ -303,10 +435,37 @@ fun ExampleComponent(modifier: Modifier) {
                     "You can use this in any scenario where you display existing reviews.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun StarRatingPostReview(title: String, subtitle: String) {
+    val textValue = remember { mutableStateOf("") }
+    Box(modifier = Modifier.width(400.dp).background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
+            Text(
+                text = title,
+                fontSize = 24.sp,
+                color = Color.DarkGray,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                text = subtitle,
+                fontSize = 16.sp,
+                color = Color.DarkGray,
+                textAlign = TextAlign.Center
+            )
+            StarRatingBar(modifier = Modifier.align(Alignment.CenterHorizontally), selectedColor = Color.Blue)
+            OutlinedTextField(
+                value = textValue.value,
+                onValueChange = { textValue.value = it },
+                shape = RoundedCornerShape(20.dp),
+                placeholder = { Text("Leave a comment...") },
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Row {
+                Spacer(modifier = Modifier.weight(1f))
+                Button(onClick = { }) {
+                    Text("Submit Review")
+                }
+            }
+        }
     }
 }
                 `,
@@ -324,10 +483,23 @@ fun ExampleComponent(modifier: Modifier) {
                 description: "Basic Authentication",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun StarRatingReview(name: String, userImage: String, rating: Int, message: String) {
+    val imageLoader = remember { ImageLoader(context = PlatformContext.INSTANCE) }
+    Box(modifier = Modifier.width(400.dp).background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
+        Row {
+            AsyncImage(
+                model = userImage,
+                contentDescription = "Placeholder",
+                imageLoader = imageLoader,
+                modifier = Modifier.size(32.dp).clip(RoundedCornerShape(50)),
+                contentScale = ContentScale.Crop
+            )
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(text = name, fontWeight = FontWeight.Bold, color = Color.DarkGray)
+                StarRatingBar(size = 24.dp, clickable = false, ratingState = remember { mutableIntStateOf(rating) }, selectedColor = Color(255,215,0))
+                Text(text = message, color = Color.DarkGray)
+            }
+        }
     }
 }
                 `,
