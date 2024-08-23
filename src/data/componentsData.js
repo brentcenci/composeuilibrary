@@ -299,7 +299,8 @@ fun ExampleComponent(modifier: Modifier) {
             },
             {
                 title: "Review with a Star Rating",
-                description: "Description for a Review with Star Rating Component",
+                description: "This is an example component displaying a user with their rating given for a product or media, with a comment. " +
+                    "You can use this in any scenario where you display existing reviews.",
                 code: `
 @Composable
 fun ExampleComponent(modifier: Modifier) {
