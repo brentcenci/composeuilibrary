@@ -529,6 +529,27 @@ fun ExampleComponent(modifier: Modifier) {
         ]
     },
     {
+        category: "Expanding Sections",
+        categoryDescription: "Components which expand dynamically on click horizontally - a perfect component for displaying cards which reveal more detail when pressed.",
+        thumbnail: "src/assets/ThumbnailExpandingSections.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
         category: "Timeline",
         categoryDescription: "Sequential layouts for showcasing chronological events or steps in a process, often used in history or progress tracking.",
         thumbnail: "src/assets/ThumbnailTimeline.png",
