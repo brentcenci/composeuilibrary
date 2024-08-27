@@ -508,6 +508,48 @@ fun StarRatingReview(name: String, userImage: String, rating: Int, message: Stri
         ]
     },
     {
+        category: "Accordions",
+        categoryDescription: "Custom designed toggle switches to impress your users over the default.",
+        thumbnail: "src/assets/ThumbnailAccordion.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
+        category: "Carousels",
+        categoryDescription: "Custom designed toggle switches to impress your users over the default.",
+        thumbnail: "src/assets/ThumbnailCarousel.png",
+        components: [
+            {
+                title: "Basic Authentication",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExampleComponent(modifier: Modifier) {
+    Box(modifier) {
+        Text("hello")
+        Text("world")
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+            }
+        ]
+    },
+    {
         category: "Toggles",
         categoryDescription: "Custom designed toggle switches to impress your users over the default.",
         thumbnail: "src/assets/ThumbnailToggles.png",
