@@ -10,7 +10,7 @@ const ComponentsListSection = () => {
                     {componentsData
                         .sort((a, b) => a.category.localeCompare(b.category))
                         .map((group, index) => (
-                        <div key={index} className="p-4">
+                        <div key={index} className="p-3 md:p-4">
                             <Card group={group}/>
                         </div>
                     ))}

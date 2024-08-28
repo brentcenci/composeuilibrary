@@ -10,7 +10,7 @@ const Card = ({group}) => {
 
     return (
         <a className="text-gray-900" href={`/component/${title}`}>
-            <div className="h-64 bg-transparent rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg hover:shadow-blue-100 group">
+            <div className="h-52 md:h-64 bg-transparent rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-lg hover:shadow-blue-100 group">
                 <div
                     className="bg-gray-100 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 group-hover:border-gray-300">
                     <h1 className="font-semibold">{title}</h1>
