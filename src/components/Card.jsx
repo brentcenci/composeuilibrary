@@ -21,12 +21,14 @@ const Card = ({group}) => {
                     </svg>
 
                 </div>
-                <div className="flex justify-center items-center h-52">
-                    <div className="relative h-4/6 w-56">
+                <div className="flex justify-center items-center h-5/6">
+                    <img
+                        src={thumbnailSrc}/>
+                    {/*<div className="relative h-4/6 w-56">
                         <img
                             src={thumbnailSrc}
                             className="box-border block overflow-hidden"/>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
         </a>
