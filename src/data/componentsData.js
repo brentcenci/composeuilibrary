@@ -509,12 +509,12 @@ fun StarRatingReview(name: String, userImage: String, rating: Int, message: Stri
     },
     {
         category: "Accordions",
-        categoryDescription: "Custom designed toggle switches to impress your users over the default.",
+        categoryDescription: "Vertically expanding sections that expand on click to reveal more information.",
         thumbnail: "src/assets/ThumbnailAccordion.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Basic Accordion",
+                description: "Description for basic accordion. As used in FAQs to save space when not being accessed, complete with animations on open and close.",
                 code: `
 @Composable
 fun ExampleComponent(modifier: Modifier) {
@@ -524,7 +524,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=accordion&component=basicaccordion"
             }
         ]
     },
@@ -576,8 +576,8 @@ fun ExampleComponent(modifier: Modifier) {
         thumbnail: "src/assets/ThumbnailExpandingSections.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Basic Expanding Section",
+                description: "Description for the basic expanding section.",
                 code: `
 @Composable
 fun ExampleComponent(modifier: Modifier) {
@@ -587,7 +587,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=expanding&component=expandinghorizontal"
             }
         ]
     },
