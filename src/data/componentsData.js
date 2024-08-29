@@ -587,6 +587,7 @@ fun ExampleComponent(modifier: Modifier) {
     }
 }
                 `,
+                size: 700,
                 link: "https://brentcenci.github.io/Campose/?category=expanding&component=expandinghorizontal"
             }
         ]

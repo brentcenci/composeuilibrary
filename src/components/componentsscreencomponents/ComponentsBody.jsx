@@ -19,7 +19,9 @@ const ComponentsBody = () => {
                         <CodeSnippet
                             code={item.code} />
                         <ComponentShowcase
-                            url={item.link}/>
+                            url={item.link}
+                            {...(item.size ? { size: item.size } : {})}
+                        />
                     </div>
                 ))}
             </div>
