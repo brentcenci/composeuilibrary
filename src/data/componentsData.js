@@ -384,7 +384,8 @@ fun StarIcon(
     )
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingbar"
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingbar",
+                size: 300,
             },
             {
                 title: "Review Post with Star Rating Bar",
@@ -469,7 +470,8 @@ fun StarRatingPostReview(title: String, subtitle: String) {
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingreview"
+                link: "https://brentcenci.github.io/Campose/?category=reviews&component=starratingreview",
+                size: 300,
             },
         ]
     },
