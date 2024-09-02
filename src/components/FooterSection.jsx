@@ -26,7 +26,7 @@ const FooterSection = ( ) => {
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
                     <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
                         href="/"
-                        className="hover:underline">ComposeLib™</a>. All Rights Reserved.</span>
+                        className="hover:underline">ComposeLib™</a>. All Rights Reserved. Developed by <a href="https://www.github.com/brentcenci" target="_blank">Brent Cenci</a>.</span>
                 </div>
             </footer>
 
