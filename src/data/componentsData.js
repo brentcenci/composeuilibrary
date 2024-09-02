@@ -557,18 +557,100 @@ fun ExampleComponent(modifier: Modifier) {
         thumbnail: "src/assets/ThumbnailToggles.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Basic Toggle",
+                description: "This is your standard toggle switch, with customization for width and height via the constructor. " +
+                    "You can use this to allow users to switch on or off functionalities in your application wherever necessary, and it can be a great place to start if you wish to further customise your own iterations.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun BasicToggle(
+    modifier: Modifier = Modifier,
+    height: Int = 70,
+    width: Int = 140,
+    state: MutableState<Boolean> = remember { mutableStateOf(false) },
+    onCheckedChange: () -> Unit = {state.value = !state.value}
+) {
+
+    val color by animateColorAsState(if (!state.value) Color.LightGray else Color(0xFF15d137))
+    val thumbColor by animateColorAsState(if (!state.value) Color.DarkGray else Color.White)
+    val border by animateColorAsState(if (!state.value) Color.DarkGray else Color.Transparent)
+
+    val sizePx = with(LocalDensity.current) { (width - height).toDp().toPx() }
+    val offset =
+        animateIntOffsetAsState(IntOffset(x = if (!state.value) 0 else sizePx.roundToInt(), 0)).value
+
+    Row(
+        modifier = modifier
+            .height(height.dp)
+            .width(width.dp)
+            .clip(RoundedCornerShape(height.dp))
+            .background(color)
+            .border(2.dp, border, RoundedCornerShape(height.dp))
+            .clickable {
+                onCheckedChange()
+            },
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .offset { offset }
+                .size(height.dp)
+                .clip(RoundedCornerShape(50))
+                .background(thumbColor)
+        ) {}
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=toggles&component=basictoggle"
+            },
+            {
+                title: "Basic Toggle with Content",
+                description: "The child of the basic toggle component above, this component also allows you to pass in a composable that will be featured within the thumbstick of the toggle switch. " +
+                    "The example below uses this feature to pass in a Text composable, however you pass in anything from an Icon to an Image, and make it responsive to the state!",
+                code: `
+@Composable
+fun BasicToggleWithContent(
+    modifier: Modifier = Modifier,
+    height: Int = 70,
+    width: Int = 140,
+    state: MutableState<Boolean> = remember { mutableStateOf(false) },
+    onCheckedChange: () -> Unit = {state.value = !state.value},
+    content: @Composable () -> Unit
+) {
+
+    val color by animateColorAsState(if (!state.value) Color.LightGray else Color(0xFF15d137))
+    val thumbColor by animateColorAsState(if (!state.value) Color.DarkGray else Color.White)
+    val border by animateColorAsState(if (!state.value) Color.DarkGray else Color.Transparent)
+
+    val sizePx = with(LocalDensity.current) { (width - height).toDp().toPx() }
+    val offset =
+        animateIntOffsetAsState(IntOffset(x = if (!state.value) 0 else sizePx.roundToInt(), 0)).value
+
+    Row(
+        modifier = modifier
+            .height(height.dp)
+            .width(width.dp)
+            .clip(RoundedCornerShape(height.dp))
+            .background(color)
+            .border(2.dp, border, RoundedCornerShape(height.dp))
+            .clickable {
+                onCheckedChange()
+            },
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(
+            modifier = Modifier
+                .offset { offset }
+                .size(height.dp)
+                .clip(RoundedCornerShape(50))
+                .background(thumbColor),
+            contentAlignment = Alignment.Center
+        ) {
+            content()
+        }
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=toggles&component=basictogglewithcontent"
             }
         ]
     },
