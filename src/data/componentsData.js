@@ -777,18 +777,100 @@ fun BasicBreadcrumb(modifier: Modifier = Modifier, separator: String = "»", sec
         thumbnail: "src/assets/ThumbnailSearchbarsAndAutocomplete.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Basic Search Bar",
+                description: "This is a super simple search bar made by stylizing the OutlinedTextField composable with a leading icon and other choice modifiers. " +
+                    "It can further be stylized to customise to your wishes, however as a base line this is perfect for simple applications needing a clearly defined search bar.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun BasicSearchBar(modifier: Modifier = Modifier) {
+    var value by remember { mutableStateOf("") }
+    OutlinedTextField(
+        value = value,
+        onValueChange = { value = it },
+        leadingIcon = {
+            Icon(Icons.Default.Search, "Search Icon")
+        },
+        maxLines = 1,
+        modifier = modifier
+    )
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=searchbars&component=basicsearchbar"
+            },
+            {
+                title: "Rounded Search Bar",
+                description: "This is a slight level up from the previous search bar, featuring rounded edges that give it a cleaner appearance, " +
+                    "a trailing icon button to allow for search options or filters to appear, and a placeholder to further convey functionality to the user. " +
+                    "The same use-cases apply as above as it can be used in any application you're making that require a sleeker design, and of course it can be further customized and built upon as needed.",
+                code: `
+@Composable
+fun RoundedSearchBar(modifier: Modifier = Modifier) {
+    var value by remember { mutableStateOf("") }
+    OutlinedTextField(
+        value = value,
+        onValueChange = { value = it },
+        placeholder = {
+            Text(text= "Search...")
+        },
+        leadingIcon = {
+            Icon(Icons.Default.Search, "Search Icon")
+        },
+        trailingIcon = {
+            IconButton(onClick = { }) {
+                Icon(Icons.Default.MoreVert, "More Vert Icon")
+            }
+        },
+        maxLines = 1,
+        shape = RoundedCornerShape(50),
+        modifier = modifier
+    )
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=searchbars&component=roundedsearchbar"
+            },
+            {
+                title: "Search Bar with Suggestions",
+                description: "This search bar is the same as the first, however features a demonstration of how you could use this feature to live-search through a database " +
+                    "or other list of terms and display possible results or suggestions below the search bar. " +
+                    "This is a great starting point if you're building anything integrating with a database such as a recipe application or food logging site," +
+                    "and you want the user to see possible suggestions based on their search query. The example depicted is the most simple version of this - using a" +
+                    " static immutable list inside the composable to show the first five results, however integrating with database results is not difficult.",
+                code: `
+@Composable
+fun SearchBarWithSuggestions(modifier: Modifier = Modifier) {
+    var value by remember { mutableStateOf("") }
+    val foods = listOf(
+        "Apple", "Banana", "Carrot", "Tomato", "Potato", "Orange", "Strawberry", "Blueberry", "Broccoli", "Spinach",
+        "Cucumber", "Onion", "Garlic", "Pepper", "Mushroom", "Lettuce", "Zucchini", "Eggplant", "Avocado", "Pineapple",
+        "Mango", "Peach", "Pear", "Plum", "Kiwi", "Grapes", "Cherry", "Watermelon", "Cantaloupe", "Papaya",
+        "Pumpkin", "Sweet Potato", "Radish", "Celery", "Asparagus", "Brussels Sprouts", "Cauliflower", "Corn", "Peas", "Green Beans",
+        "Cabbage", "Kale", "Leek", "Beetroot", "Artichoke", "Bell Pepper", "Chili Pepper", "Bok Choy", "Turnip", "Parsley",
+        "Rosemary", "Basil", "Thyme", "Oregano", "Cilantro", "Mint", "Dill", "Chives", "Lime", "Lemon",
+        "Apricot", "Raspberry", "Blackberry", "Cranberry", "Pomegranate", "Fig", "Date", "Coconut", "Dragon Fruit", "Lychee",
+        "Starfruit", "Passion Fruit", "Guava", "Tangerine", "Nectarine", "Rutabaga", "Parsnip", "Butternut Squash", "Acorn Squash", "Spaghetti Squash",
+        "Yam", "Okra", "Snap Peas", "Edamame", "Fennel", "Shallot", "Scallion", "Jalapeño", "Habanero", "Serrano",
+        "Chickpeas", "Lentils", "Black Beans", "Kidney Beans", "Quinoa", "Barley", "Brown Rice", "Oats", "Farro", "Couscous"
+    )
+    Column(modifier = modifier.width(300.dp)) {
+        OutlinedTextField(
+            value = value,
+            onValueChange = { value = it },
+            leadingIcon = {
+                Icon(Icons.Default.Search, "Search Icon")
+            },
+            maxLines = 1,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Column(modifier = Modifier.background(Color.White)) {
+            foods.filter { it.lowercase().contains(value.lowercase()) }.take(5).forEach { food ->
+                HorizontalDivider()
+                Row(modifier = Modifier.fillMaxWidth().clickable { value = food }.padding(5.dp)) { Text(text = food) }
+            }
+        }
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=searchbars&component=searchbarwithsuggestions"
             }
         ]
     },
