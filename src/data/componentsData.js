@@ -773,7 +773,7 @@ fun BasicBreadcrumb(modifier: Modifier = Modifier, separator: String = "»", sec
     },
     {
         category: "Search Bars and Autocomplete",
-        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        categoryDescription: "Simple components using Textfields that take in a query and execute search functionality, perfect for finding matching text in a database or list.",
         thumbnail: "src/assets/ThumbnailSearchbarsAndAutocomplete.png",
         components: [
             {
