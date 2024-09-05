@@ -741,22 +741,33 @@ fun ExampleComponent(modifier: Modifier) {
     },
     {
         category: "Breadcrumbs",
-        categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
+        categoryDescription: "Simple horizontal components representing stages of navigation through a process.",
         thumbnail: "src/assets/ThumbnailBreadcrumbs.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Basic Breadcrumbs",
+                description: "This is a basic implementation of a breadcrumb component to dictate the completed stages of interaction or navigation. " +
+                    "You can use this in e-commerce sites or in payment screens or wherever necessary.",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun BasicBreadcrumb(modifier: Modifier = Modifier, separator: String = "»", sections: List<String> = listOf("Cart", "Billing", "Shipping", "Payment")) {
+    val current = remember { mutableIntStateOf(2) }
+    Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        sections.forEachIndexed { index, section ->
+            Text(
+                text = section,
+                fontWeight = if (index == current.value) FontWeight.Bold else FontWeight.Normal,
+                color = if (current.value < index) Color.LightGray else Color.Blue,
+                modifier = Modifier.clickable { current.value = index }
+            )
+            if (index != sections.size-1) {
+                Text(separator, color = Color.LightGray)
+            }
+        }
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=breadcrumbs&component=basicbreadcrumb"
             }
         ]
     },
