@@ -871,7 +871,36 @@ fun SearchBarWithSuggestions(modifier: Modifier = Modifier) {
 }
                 `,
                 link: "https://brentcenci.github.io/Campose/?category=searchbars&component=searchbarwithsuggestions"
-            }
+            },
+            {
+                title: "Search Bar with Button",
+                description: "This is a simple example of how you can design your search bar to include a search button, in the cases where live-searching may not be efficient or best practice. " +
+                    "Such scenarios may be where you need to do a network call on each search and you don't want to run that on value change, or if you only want to update with results when the user is done with their query. " +
+                    "You can use this example in those scenarios, or modify as you see fit.",
+                code: `
+@Composable
+fun SearchBarWithButton(modifier: Modifier = Modifier) {
+    var value by remember { mutableStateOf("") }
+    Row(modifier = modifier.height(IntrinsicSize.Min), verticalAlignment = Alignment.CenterVertically) {
+        OutlinedTextField(
+            value = value,
+            onValueChange = { value = it },
+            placeholder = {
+                Text(text= "Search...")
+            },
+            maxLines = 1,
+            shape = RoundedCornerShape(topStart = 20.dp, bottomStart = 20.dp),
+            modifier = Modifier.fillMaxHeight()
+        )
+        IconButton(onClick = { }, modifier = Modifier.fillMaxHeight().background(color = Color(0xFF572de0), RoundedCornerShape(topEnd = 20.dp, bottomEnd = 20.dp)))  {
+            Icon(Icons.Default.Search, "Search Button Icon", tint = Color.White)
+        }
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=searchbars&component=searchbarwithbutton"
+            },
+
         ]
     },
 ];
