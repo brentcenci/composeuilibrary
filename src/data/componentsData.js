@@ -436,35 +436,21 @@ fun StarRatingPostReview(title: String, subtitle: String) {
                     "You can use this in any scenario where you display existing reviews.",
                 code: `
 @Composable
-fun StarRatingPostReview(title: String, subtitle: String) {
-    val textValue = remember { mutableStateOf("") }
+fun StarRatingReview(name: String, userImage: String, rating: Int, message: String) {
+    val imageLoader = remember { ImageLoader(context = PlatformContext.INSTANCE) }
     Box(modifier = Modifier.width(400.dp).background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
-            Text(
-                text = title,
-                fontSize = 24.sp,
-                color = Color.DarkGray,
-                fontWeight = FontWeight.Bold
+        Row {
+            AsyncImage(
+                model = userImage,
+                contentDescription = "Placeholder",
+                imageLoader = imageLoader,
+                modifier = Modifier.size(32.dp).clip(RoundedCornerShape(50)),
+                contentScale = ContentScale.Crop
             )
-            Text(
-                text = subtitle,
-                fontSize = 16.sp,
-                color = Color.DarkGray,
-                textAlign = TextAlign.Center
-            )
-            StarRatingBar(modifier = Modifier.align(Alignment.CenterHorizontally), selectedColor = Color.Blue)
-            OutlinedTextField(
-                value = textValue.value,
-                onValueChange = { textValue.value = it },
-                shape = RoundedCornerShape(20.dp),
-                placeholder = { Text("Leave a comment...") },
-                modifier = Modifier.fillMaxWidth(),
-            )
-            Row {
-                Spacer(modifier = Modifier.weight(1f))
-                Button(onClick = { }) {
-                    Text("Submit Review")
-                }
+            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(text = name, fontWeight = FontWeight.Bold, color = Color.DarkGray)
+                StarRatingBar(size = 24.dp, clickable = false, ratingState = remember { mutableIntStateOf(rating) }, selectedColor = Color(255,215,0))
+                Text(text = message, color = Color.DarkGray)
             }
         }
     }
