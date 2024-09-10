@@ -467,32 +467,194 @@ fun StarRatingReview(name: String, userImage: String, rating: Int, message: Stri
         thumbnail: "src/assets/ThumbnailAuthentication.png",
         components: [
             {
-                title: "Basic Authentication",
-                description: "Basic Authentication",
+                title: "Username Field",
+                description: "A simple example of a standalone username field as part of a wider-authentication composable. " +
+                    "Use this alongside a password field, or change it to take an email if that matches your service.",
                 code: `
 @Composable
-fun StarRatingReview(name: String, userImage: String, rating: Int, message: String) {
-    val imageLoader = remember { ImageLoader(context = PlatformContext.INSTANCE) }
-    Box(modifier = Modifier.width(400.dp).background(Color.White, RoundedCornerShape(20.dp)).padding(20.dp)) {
-        Row {
-            AsyncImage(
-                model = userImage,
-                contentDescription = "Placeholder",
-                imageLoader = imageLoader,
-                modifier = Modifier.size(32.dp).clip(RoundedCornerShape(50)),
-                contentScale = ContentScale.Crop
-            )
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(text = name, fontWeight = FontWeight.Bold, color = Color.DarkGray)
-                StarRatingBar(size = 24.dp, clickable = false, ratingState = remember { mutableIntStateOf(rating) }, selectedColor = Color(255,215,0))
-                Text(text = message, color = Color.DarkGray)
-            }
+fun UsernameField(modifier: Modifier = Modifier) {
+    var usernameValue by remember { mutableStateOf("") }
+    Column(modifier = modifier.width(300.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text("Username", color = Color.DarkGray)
+        OutlinedTextField(
+            value = usernameValue,
+            onValueChange = {usernameValue = it},
+            maxLines = 1,
+            placeholder = {Text("Username...")},
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=authentication&component=usernamefield"
+            },
+            {
+                title: "Password Field",
+                description: "A simple example of a standalone password field as part of a wider-authentication composable, " +
+                    "complete with toggleable visibility with a local icon (you will have to source your own, or use the extended materials icons dependency). " +
+                    "Use this alongside a username or email field to complete your sign in or sign up process.",
+                code: `
+@Composable
+fun PasswordField(modifier: Modifier = Modifier) {
+    var passwordValue by remember { mutableStateOf("") }
+    val visiblePassword = remember { mutableStateOf(false) }
+    Column(modifier = modifier.width(300.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text("Password", color = Color.DarkGray)
+        OutlinedTextField(
+            value = passwordValue,
+            onValueChange = {passwordValue = it},
+            maxLines = 1,
+            placeholder = {Text("Password...")},
+            trailingIcon = {
+                IconButton(onClick = { visiblePassword.value = !visiblePassword.value }) {
+                    if (visiblePassword.value) Icon(painterResource(Res.drawable.visible), "Eye Icon", modifier = Modifier.size(24.dp)) else Icon(painterResource(Res.drawable.visibleoff), "Eye Icon", modifier = Modifier.size(24.dp))
+                }
+            },
+            visualTransformation = if (!visiblePassword.value) PasswordVisualTransformation() else VisualTransformation.None,
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=authentication&component=passwordfield"
+            },
+            {
+                title: "Sign In Component",
+                description: "A basic sign in card component featuring a title, subtitle and a field for a username and a password. " +
+                    "The form also features a submission button and a space to put any 'forgot your password' logic.",
+                code: `
+@Composable
+fun BasicSignin(modifier: Modifier = Modifier, title: String = "Sign in", subtitle: String = "Enter your details to sign into your account") {
+    var usernameValue by remember { mutableStateOf("") }
+    var passwordValue by remember { mutableStateOf("") }
+    val visiblePassword = remember { mutableStateOf(false) }
+    Column(modifier = modifier.width(300.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text(text = title, fontSize = 30.sp, fontWeight = FontWeight.Bold, color = Color.DarkGray)
+        Text(text = subtitle, fontSize = 18.sp, color = Color.DarkGray)
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Text("Username", color = Color.DarkGray)
+        OutlinedTextField(
+            value = usernameValue,
+            onValueChange = {usernameValue = it},
+            maxLines = 1,
+            placeholder = {Text("Username...")},
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+
+        Text("Password", color = Color.DarkGray)
+        OutlinedTextField(
+            value = passwordValue,
+            onValueChange = {passwordValue = it},
+            maxLines = 1,
+            placeholder = {Text("Password...")},
+            trailingIcon = {
+                IconButton(onClick = { visiblePassword.value = !visiblePassword.value }) {
+                    if (visiblePassword.value) Icon(painterResource(Res.drawable.visible), "Eye Icon", modifier = Modifier.size(24.dp)) else Icon(painterResource(Res.drawable.visibleoff), "Eye Icon", modifier = Modifier.size(24.dp))
+                }
+            },
+            visualTransformation = if (!visiblePassword.value) PasswordVisualTransformation() else VisualTransformation.None,
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Button(
+            onClick = { },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+            Text("Sign In")
+        }
+        Text(
+            text = "Forgot your password?",
+            color = Color.LightGray,
+            modifier = Modifier.clickable {  }
+        )
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=authentication&component=basicsignin"
+            },
+            {
+                title: "Sign Up Component",
+                description: "A basic sign up card component featuring a title, subtitle and a field for a username and two for passwords - allowing for you to implement your own logic to ensure the two match. " +
+                    "The form also features a submission button.",
+                code: `
+@Composable
+fun BasicSignup(modifier: Modifier = Modifier, title: String = "Sign Up", subtitle: String = "Enter your details to create a new account") {
+    var usernameValue by remember { mutableStateOf("") }
+    var passwordValue by remember { mutableStateOf("") }
+    var confirmPasswordValue by remember { mutableStateOf("") }
+    val visiblePassword = remember { mutableStateOf(false) }
+    Column(modifier = modifier.width(300.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Text(text = title, fontSize = 30.sp, fontWeight = FontWeight.Bold, color = Color.DarkGray)
+        Text(text = subtitle, fontSize = 18.sp, color = Color.DarkGray)
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Text("Username", color = Color.DarkGray)
+        OutlinedTextField(
+            value = usernameValue,
+            onValueChange = {usernameValue = it},
+            maxLines = 1,
+            placeholder = {Text("Username...")},
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+
+        Text("Password", color = Color.DarkGray)
+        OutlinedTextField(
+            value = passwordValue,
+            onValueChange = {passwordValue = it},
+            maxLines = 1,
+            placeholder = {Text("Password...")},
+            trailingIcon = {
+                IconButton(onClick = { visiblePassword.value = !visiblePassword.value }) {
+                    if (visiblePassword.value) Icon(painterResource(Res.drawable.visible), "Eye Icon", modifier = Modifier.size(24.dp)) else Icon(painterResource(Res.drawable.visibleoff), "Eye Icon", modifier = Modifier.size(24.dp))
+                }
+            },
+            visualTransformation = if (!visiblePassword.value) PasswordVisualTransformation() else VisualTransformation.None,
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+
+        Text("Confirm Password", color = Color.DarkGray)
+        OutlinedTextField(
+            value = confirmPasswordValue,
+            onValueChange = {confirmPasswordValue = it},
+            maxLines = 1,
+            placeholder = {Text("Confirm Password...")},
+            trailingIcon = {
+                IconButton(onClick = { visiblePassword.value = !visiblePassword.value }) {
+                    if (visiblePassword.value) Icon(painterResource(Res.drawable.visible), "Eye Icon", modifier = Modifier.size(24.dp)) else Icon(painterResource(Res.drawable.visibleoff), "Eye Icon", modifier = Modifier.size(24.dp))
+                }
+            },
+            visualTransformation = if (!visiblePassword.value) PasswordVisualTransformation() else VisualTransformation.None,
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Button(
+            onClick = { },
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+            Text("Sign Up")
         }
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
-            }
+                link: "https://brentcenci.github.io/Campose/?category=authentication&component=basicsignup",
+                size: 700,
+            },
         ]
     },
     {
