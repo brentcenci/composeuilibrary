@@ -579,7 +579,8 @@ fun BasicSignin(modifier: Modifier = Modifier, title: String = "Sign in", subtit
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=authentication&component=basicsignin"
+                link: "https://brentcenci.github.io/Campose/?category=authentication&component=basicsignin",
+                size: 700
             },
             {
                 title: "Sign Up Component",
