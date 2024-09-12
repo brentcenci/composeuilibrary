@@ -12,8 +12,11 @@ export default {
     extend: {
       backgroundImage: {
         'blue-gradient':
-            "linear-gradient(to right bottom, #768AF4, 70%, #1400FF)",
+            "linear-gradient(to right bottom, #768AF4, 45%, #1400FF, 75%, #768AF4)",
       },
+      transitionProperty: {
+        'bg': 'background-image',
+      }
     },
   },
   plugins: [
