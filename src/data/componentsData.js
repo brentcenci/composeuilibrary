@@ -3,6 +3,7 @@ export const componentsData = [
         category: "Cards",
         categoryDescription: "Versatile containers for displaying grouped content, such as text, images, and actions, in a clean, organized format.",
         thumbnail: "src/assets/ThumbnailCard.png",
+        display: true,
         components: [
             {
                 title: "Basic Card",
@@ -233,6 +234,7 @@ fun VideoCard(title: String, summary: String, length: String, imageUrl: String, 
         categoryDescription: "A selection of complete components and elements that may be found in comment sections or review areas of an application. " +
             "They should be used to provide the opportunity for users to give their thoughts on a piece of content or media.",
         thumbnail: "src/assets/ThumbnailCommentsReview.png",
+        display: true,
         components: [
             {
                 title: "Basic Comment",
@@ -465,6 +467,7 @@ fun StarRatingReview(name: String, userImage: String, rating: Int, message: Stri
         category: "Authentication",
         categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
         thumbnail: "src/assets/ThumbnailAuthentication.png",
+        display: true,
         components: [
             {
                 title: "Username Field",
@@ -662,6 +665,7 @@ fun BasicSignup(modifier: Modifier = Modifier, title: String = "Sign Up", subtit
         category: "Accordions",
         categoryDescription: "Vertically expanding sections that expand on click to reveal more information.",
         thumbnail: "src/assets/ThumbnailAccordion.png",
+        display: true,
         components: [
             {
                 title: "Basic Accordion",
@@ -704,6 +708,7 @@ fun ExampleComponent(modifier: Modifier) {
         category: "Toggles",
         categoryDescription: "Custom designed toggle switches to impress your users over the default.",
         thumbnail: "src/assets/ThumbnailToggles.png",
+        display: true,
         components: [
             {
                 title: "Basic Toggle",
@@ -807,6 +812,7 @@ fun BasicToggleWithContent(
         category: "Expanding Sections",
         categoryDescription: "Components which expand dynamically on click horizontally - a perfect component for displaying cards which reveal more detail when pressed.",
         thumbnail: "src/assets/ThumbnailExpandingSections.png",
+        display: true,
         components: [
             {
                 title: "Basic Expanding Section",
@@ -892,6 +898,7 @@ fun ExampleComponent(modifier: Modifier) {
         category: "Breadcrumbs",
         categoryDescription: "Simple horizontal components representing stages of navigation through a process.",
         thumbnail: "src/assets/ThumbnailBreadcrumbs.png",
+        display: true,
         components: [
             {
                 title: "Basic Breadcrumbs",
@@ -924,6 +931,7 @@ fun BasicBreadcrumb(modifier: Modifier = Modifier, separator: String = "»", sec
         category: "Search Bars and Autocomplete",
         categoryDescription: "Simple components using Textfields that take in a query and execute search functionality, perfect for finding matching text in a database or list.",
         thumbnail: "src/assets/ThumbnailSearchbarsAndAutocomplete.png",
+        display: true,
         components: [
             {
                 title: "Basic Search Bar",

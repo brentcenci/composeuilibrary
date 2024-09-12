@@ -9,6 +9,7 @@ const ComponentsListSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     {componentsData
                         .sort((a, b) => a.category.localeCompare(b.category))
+                        .filter(component => Object.prototype.hasOwnProperty.call(component, 'display'))
                         .map((group, index) => (
                         <div key={index} className="p-3 md:p-4">
                             <Card group={group}/>
