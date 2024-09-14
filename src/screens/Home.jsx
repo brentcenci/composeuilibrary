@@ -13,7 +13,7 @@ const Home = () => {
                                 Get Access »
                             </button>
                             <button
-                                className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                                className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-transparent bg-clip-text tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 View Components »
                             </button>
                         </div>
@@ -60,6 +60,20 @@ const Home = () => {
 
             <div id="steps">
                 <p className="text-center text-2xl">As easy as...</p>
+                <div className="flex-col w-1/2 mx-auto">
+                    <div className="flex">
+                        <div className="w-3/4 bg-blue-500">hello</div>
+                        <div>hello</div>
+                    </div>
+                    <div className="flex-row-reverse flex">
+                        <div className="w-3/4 bg-blue-500">hello</div>
+                        <div>hello</div>
+                    </div>
+                    <div className="flex">
+                        <div className="w-3/4 bg-blue-500">hello</div>
+                        <div>hello</div>
+                    </div>
+                </div>
             </div>
 
         </>
