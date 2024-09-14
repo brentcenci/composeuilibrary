@@ -24,9 +24,9 @@ const Home = () => {
             </div>
 
             <div id="summary">
-                <section className="relative bg-gray-100 -skew-y-2">
-                    <div className="skew-y-2 py-24 px-24 md:px-32 lg:px-48 xl:px-96">
-                        <p className="text-2xl md:text-3xl xl:text-4xl text-center tracking-tighter">
+                <section className="relative bg-gray-100 -skew-y-2 mb-20">
+                    <div className="skew-y-2 py-32 px-24 md:px-32 lg:px-48 xl:px-96">
+                        <p className="text-2xl md:text-3xl xl:text-4xl text-center tracking-tight">
                             Browse this free, open-source library of reusable components and sample screen designs for any Android or Compose Multiplatform projects you are undertaking.
                         </p>
                     </div>
@@ -34,7 +34,7 @@ const Home = () => {
             </div>
 
             <div id="steps">
-
+                <p className="text-center text-2xl">As easy as...</p>
             </div>
 
         </>
