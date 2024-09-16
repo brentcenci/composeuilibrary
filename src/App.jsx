@@ -16,12 +16,14 @@ function App() {
         <Router>
             <TopNavBar/>
             <Routes>
-                <Route path="/" element={<HomeScreen/>}/>
+                {/*<Route path="/" element={<HomeScreen/>}/>*/}
+                <Route path="/" element={<Home />}/>
                 <Route path="/components" element={<Components />}/>
                 <Route path="/screens" element={<Screens />}/>
+
                 <Route path="/component/:category" element={<ComponentsScreen />}/>
                 <Route path="/screen/:screen" element={<ScreensScreen />}/>
-                <Route path="/newhome" element={<Home />}/>
+
             </Routes>
             <FooterSection/>
         </Router>

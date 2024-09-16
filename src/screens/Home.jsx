@@ -9,14 +9,16 @@ const Home = () => {
                         <h1 className="font-black text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text pe-3">Compose</h1>
                         <br/>
                         <div className="flex flex-col md:flex-row space-x-4">
-                            <button
+                            <a
+                                href="/"
                                 className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 Get Access »
-                            </button>
-                            <button
+                            </a>
+                            <a
+                                href="/components"
                                 className="md:mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-transparent bg-clip-text tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 View Components »
-                            </button>
+                            </a>
                         </div>
 
                     </div>
@@ -146,16 +148,17 @@ const Home = () => {
                 <section className="relative bg-gray-100 -skew-y-2 mt-36 mb-10">
                     <div className="skew-y-2 py-32 px-10 lg:px-40">
                         <h1 className="font-bold text-4xl md:text-5xl mb-4">30+ Components</h1>
-                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2">
+                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2 mb-16">
                             With complete access to each <span className="font-mono text-yellow-400">@Composable</span>’s
                             code, you have full freedom to customize and
                             build on each and every component however you see fit! Change the color scheme, sizes, add
                             or remove any padding - make it yours.
                         </h2>
-                        <button
-                            className="mt-16 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                        <a
+                            href="/components"
+                            className="bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                             Browse Components »
-                        </button>
+                        </a>
                     </div>
                 </section>
             </div>
@@ -163,15 +166,16 @@ const Home = () => {
                 <section className="relative bg-gray-100 -skew-y-2 mt-10 mb-10">
                     <div className="skew-y-2 py-32 px-10 lg:px-40">
                         <h1 className="font-bold text-4xl md:text-5xl mb-4">Ready-to-ship Screens</h1>
-                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2">
+                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2 mb-16">
                             We’ve taken on the task of designing several screens ready to make their home in your
                             applications! From authentication screens to profiles, perfect for prototyping or final
                             product. Let us streamline your application development process.
                         </h2>
-                        <button
-                            className="mt-16 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                        <a
+                            href="/screens"
+                            className="bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                             Browse Screens »
-                        </button>
+                        </a>
                     </div>
                 </section>
             </div>

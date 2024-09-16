@@ -16,10 +16,10 @@ const FooterSection = ( ) => {
                                 <a href="/#" className="hover:underline me-4 md:me-6">Home</a>
                             </li>
                             <li>
-                                <a href="/#components" className="hover:underline me-4 md:me-6">Components</a>
+                                <a href="/components" className="hover:underline me-4 md:me-6">Components</a>
                             </li>
                             <li>
-                                <a href="/#screens" className="hover:underline">Screens</a>
+                                <a href="/screens" className="hover:underline">Screens</a>
                             </li>
                         </ul>
                     </div>

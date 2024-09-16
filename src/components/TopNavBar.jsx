@@ -22,12 +22,12 @@ const TopNavBar = () => {
                                 Home
                             </li>
                         </a>
-                        <a href="/#components">
+                        <a href="/components">
                             <li>
                                 Components
                             </li>
                         </a>
-                        <a href="/#screens">
+                        <a href="/screens">
                             <li>
                                 Screens
                             </li>
