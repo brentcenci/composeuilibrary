@@ -4,7 +4,8 @@ const Home = () => {
             <div id="header">
                 <header className="mx-10 lg:mx-40 py-60 lg:py-80 flex justify-between">
                     <div>
-                        <h1 className="font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Ready-built <br/> components for</h1>
+                        <h1 className="font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Ready-built <br/> components
+                            for</h1>
                         <h1 className="font-black text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text pe-3">Compose</h1>
                         <br/>
                         <div className="flex flex-col md:flex-row space-x-4">
@@ -34,7 +35,8 @@ const Home = () => {
                 <section className="relative bg-gray-100 -skew-y-2 mb-20">
                     <div className="skew-y-2 py-32 px-24 md:px-32 lg:px-48 xl:px-96">
                         <p className="text-2xl md:text-3xl xl:text-4xl text-center tracking-tight">
-                            Browse this free, open-source library of reusable components and sample screen designs for any Android or Compose Multiplatform projects you are undertaking.
+                            Browse this free, open-source library of reusable components and sample screen designs for
+                            any Android or Compose Multiplatform projects you are undertaking.
                         </p>
                         <div className="flex space-x-10 my-10 justify-center">
                             <svg viewBox="0 0 128 128" width="64" height="64">
@@ -75,16 +77,17 @@ const Home = () => {
                                 1
                             </h1>
                             <div className="flex flex-col">
-                                <h1 className="font-bold text-2xl md:text-4xl">
+                                <h1 className="font-bold text-2xl md:text-3xl xl:text-4xl">
                                     Find Component
                                 </h1>
-                                <h1 className="text-xl md:text-3xl">
+                                <h1 className="text-xl md:text-2xl xl:text-3xl">
                                     Browse the collection of free components to find what you're looking for.
                                 </h1>
                             </div>
                         </div>
                         <div className="content-center hidden md:block">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960" width="128px"
+                            <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960"
+                                 width="128px"
                                  fill="#b8b8b8">
                                 <path
                                     d="m618-358 44-42-84-84q11-17 16.5-36t5.5-40q0-59-41.5-99.5T460-700q-57 0-98.5 40.5T320-560q0 59 41.5 99.5T460-420q21 0 39.5-5.5T536-442l82 84ZM460-480q-33 0-56.5-23.5T380-560q0-33 23.5-56.5T460-640q32 0 56 23.5t24 56.5q0 33-23.5 56.5T460-480ZM160-240q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440ZM40-120v-80h880v80H40Z"/>
@@ -97,10 +100,10 @@ const Home = () => {
                                 2
                             </h1>
                             <div className="flex flex-col">
-                            <h1 className="font-bold text-2xl md:text-4xl text-end">
+                                <h1 className="font-bold text-2xl md:text-3xl xl:text-4xl text-end">
                                     View Demo
                                 </h1>
-                                <h1 className="text-xl md:text-3xl text-end">
+                                <h1 className="text-xl md:text-2xl xl:text-3xl text-end">
                                     See a live demonstration of the component right in your browser.
                                 </h1>
                             </div>
@@ -120,16 +123,17 @@ const Home = () => {
                                 3
                             </h1>
                             <div className="flex flex-col">
-                                <h1 className="font-bold text-2xl md:text-4xl">
+                                <h1 className="font-bold text-2xl md:text-3xl xl:text-4xl">
                                     Copy Code
                                 </h1>
-                                <h1 className="text-xl md:text-3xl">
+                                <h1 className="text-xl md:text-2xl xl:text-3xl">
                                     Take the code straight into your project and modify however you please!
                                 </h1>
                             </div>
                         </div>
                         <div className="content-center hidden md:block">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960" width="128px"
+                            <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960"
+                                 width="128px"
                                  fill="#b8b8b8">
                                 <path
                                     d="m384-336 56-57-87-87 87-87-56-57-144 144 144 144Zm192 0 144-144-144-144-56 57 87 87-87 87 56 57ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
@@ -137,6 +141,39 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div id="components">
+                <section className="relative bg-gray-100 -skew-y-2 mt-36 mb-10">
+                    <div className="skew-y-2 py-32 px-10 lg:px-40">
+                        <h1 className="font-bold text-4xl md:text-5xl mb-4">30+ Components</h1>
+                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2">
+                            With complete access to each <span className="font-mono text-yellow-400">@Composable</span>’s
+                            code, you have full freedom to customize and
+                            build on each and every component however you see fit! Change the color scheme, sizes, add
+                            or remove any padding - make it yours.
+                        </h2>
+                        <button
+                            className="mt-16 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                            Browse Components »
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <div id="screens">
+                <section className="relative bg-gray-100 -skew-y-2 mt-10 mb-10">
+                    <div className="skew-y-2 py-32 px-10 lg:px-40">
+                        <h1 className="font-bold text-4xl md:text-5xl mb-4">Ready-to-ship Screens</h1>
+                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2">
+                            We’ve taken on the task of designing several screens ready to make their home in your
+                            applications! From authentication screens to profiles, perfect for prototyping or final
+                            product. Let us streamline your application development process.
+                        </h2>
+                        <button
+                            className="mt-16 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                            Browse Screens »
+                        </button>
+                    </div>
+                </section>
             </div>
 
         </>

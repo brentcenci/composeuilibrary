@@ -8,6 +8,7 @@ export default {
   theme: {
     fontFamily: {
       "BowlbyOne": ["Bowlby One", 'serif'],
+      'mono': ["Space Mono", 'ui-monospace', 'SFMono-Regular'],
     },
     extend: {
       backgroundImage: {
