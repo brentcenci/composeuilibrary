@@ -6,6 +6,8 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ComponentsScreen from "./screens/ComponentsScreen.jsx";
 import ScreensScreen from "./screens/ScreensScreen.jsx";
 import Home from "./screens/Home.jsx";
+import Components from "./screens/Components.jsx";
+import Screens from "./screens/Screens.jsx";
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
             <TopNavBar/>
             <Routes>
                 <Route path="/" element={<HomeScreen/>}/>
+                <Route path="/components" element={<Components />}/>
+                <Route path="/screens" element={<Screens />}/>
                 <Route path="/component/:category" element={<ComponentsScreen />}/>
                 <Route path="/screen/:screen" element={<ScreensScreen />}/>
                 <Route path="/newhome" element={<Home />}/>
