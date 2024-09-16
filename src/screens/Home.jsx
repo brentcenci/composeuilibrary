@@ -7,13 +7,13 @@ const Home = () => {
                         <h1 className="font-black text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Ready-built <br/> components for</h1>
                         <h1 className="font-black text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text pe-3">Compose</h1>
                         <br/>
-                        <div className="flex space-x-4">
+                        <div className="flex flex-col md:flex-row space-x-4">
                             <button
                                 className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 Get Access »
                             </button>
                             <button
-                                className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-transparent bg-clip-text tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                                className="md:mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-transparent bg-clip-text tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 View Components »
                             </button>
                         </div>
@@ -70,20 +70,20 @@ const Home = () => {
                 <p className="text-center text-2xl mb-40">As easy as...</p>
                 <div className="flex-col w-3/4 xl:w-1/2 mx-auto space-y-36">
                     <div className="flex">
-                        <div className="flex flex-row w-3/5">
+                        <div className="flex flex-row w-full md:w-3/5">
                             <h1 className="font-black text-9xl bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text px-5">
                                 1
                             </h1>
                             <div className="flex flex-col">
-                                <h1 className="font-bold text-4xl">
+                                <h1 className="font-bold text-2xl md:text-4xl">
                                     Find Component
                                 </h1>
-                                <h1 className="text-3xl">
+                                <h1 className="text-xl md:text-3xl">
                                     Browse the collection of free components to find what you're looking for.
                                 </h1>
                             </div>
                         </div>
-                        <div className="content-center">
+                        <div className="content-center hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960" width="128px"
                                  fill="#b8b8b8">
                                 <path
@@ -92,20 +92,20 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="flex-row-reverse flex">
-                        <div className="flex flex-row-reverse w-3/5">
+                        <div className="flex flex-row-reverse w-full md:w-3/5">
                             <h1 className="font-black text-9xl bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text px-5">
                                 2
                             </h1>
                             <div className="flex flex-col">
-                            <h1 className="font-bold text-4xl text-end">
+                            <h1 className="font-bold text-2xl md:text-4xl text-end">
                                     View Demo
                                 </h1>
-                                <h1 className="text-3xl text-end">
+                                <h1 className="text-xl md:text-3xl text-end">
                                     See a live demonstration of the component right in your browser.
                                 </h1>
                             </div>
                         </div>
-                        <div className="content-center">
+                        <div className="content-center hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960"
                                  width="128px"
                                  fill="#b8b8b8">
@@ -115,20 +115,20 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="flex">
-                        <div className="flex flex-row w-3/5">
+                        <div className="flex flex-row w-full md:w-3/5">
                             <h1 className="font-black text-9xl bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out inline text-transparent bg-clip-text px-5">
                                 3
                             </h1>
                             <div className="flex flex-col">
-                                <h1 className="font-bold text-4xl">
+                                <h1 className="font-bold text-2xl md:text-4xl">
                                     Copy Code
                                 </h1>
-                                <h1 className="text-3xl">
+                                <h1 className="text-xl md:text-3xl">
                                     Take the code straight into your project and modify however you please!
                                 </h1>
                             </div>
                         </div>
-                        <div className="content-center">
+                        <div className="content-center hidden md:block">
                             <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960" width="128px"
                                  fill="#b8b8b8">
                                 <path
