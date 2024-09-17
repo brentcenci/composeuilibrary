@@ -16,7 +16,7 @@ function App() {
         <Router>
             <TopNavBar/>
             <Routes>
-                {/*<Route path="/" element={<HomeScreen/>}/>*/}
+                <Route path="/oldhome" element={<HomeScreen/>}/>
                 <Route path="/" element={<Home />}/>
                 <Route path="/components" element={<Components />}/>
                 <Route path="/screens" element={<Screens />}/>
