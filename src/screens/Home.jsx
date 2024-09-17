@@ -22,9 +22,9 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className="hidden md:block md:w-1/4">
+                    <div className="hidden md:flex justify-center items-start md:w-1/3">
                         <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnBTCc9BJD4etINP-HjM93fek4LOt-MWCHRw&s"
+                            src="./src/assets/ComponentsImage.png"
                             alt="Header Image"
                             className="w-full h-auto"
                         />
