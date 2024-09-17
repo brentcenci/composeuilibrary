@@ -146,19 +146,27 @@ const Home = () => {
             </div>
             <div id="components">
                 <section className="relative bg-gray-100 -skew-y-2 mt-36 mb-10">
-                    <div className="skew-y-2 py-32 px-10 lg:px-40">
-                        <h1 className="font-bold text-4xl md:text-5xl mb-4">30+ Components</h1>
-                        <h2 className="text-xl md:text-2xl w-3/4 xl:w-1/2 mb-16">
-                            With complete access to each <span className="font-mono text-yellow-400">@Composable</span>’s
-                            code, you have full freedom to customize and
-                            build on each and every component however you see fit! Change the color scheme, sizes, add
-                            or remove any padding - make it yours.
-                        </h2>
-                        <a
-                            href="/components"
-                            className="bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                            Browse Components »
-                        </a>
+                    <div className="skew-y-2 py-32 flex flex-row w-full">
+                        <div className="ps-10 lg:ps-40 w-3/4 lg:w-1/2">
+                            <h1 className="font-bold text-4xl md:text-5xl mb-4">30+ Components</h1>
+                            <h2 className="text-xl md:text-2xl mb-16">
+                                With complete access to each <span
+                                className="font-mono text-yellow-400">@Composable</span>’s
+                                code, you have full freedom to customize and
+                                build on each and every component however you see fit! Change the color scheme, sizes,
+                                add
+                                or remove any padding - make it yours.
+                            </h2>
+                            <a
+                                href="/components"
+                                className="bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                                Browse Components »
+                            </a>
+                        </div>
+                        <div className="w-1/4 lg:w-1/2 hidden lg:flex justify-center items-center">
+                            <img src="./src//assets/ComponentsImage.png" className="max-w-md max-h-72" />
+                        </div>
+
                     </div>
                 </section>
             </div>
