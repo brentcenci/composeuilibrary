@@ -63,14 +63,6 @@ const Home = () => {
             </div>
 
             <div id="steps">
-                {/*<div className="w-full h-full -z-10 flex justify-center absolute">
-                    <svg className="" viewBox="0 0 68 123" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M36.0001 0.5C36.0001 6.5 -44.342 17.3495 36.0001 42C80 55.5 77.9238 60.9762 36.0001 74.5C-41.5 99.5 36.0001 102.5 36.0001 123"
-                            stroke="#a3a3a3" stroke-dasharray="5 5"/>
-                    </svg>
-
-                </div>*/}
                 <p className="text-center text-2xl mb-40">As easy as...</p>
                 <div className="flex-col w-3/4 xl:w-1/2 mx-auto space-y-36">
                     <div className="flex">
@@ -164,7 +156,7 @@ const Home = () => {
                             </a>
                         </div>
                         <div className="w-1/4 lg:w-1/2 hidden lg:flex justify-center items-center">
-                            <img src="./src//assets/ComponentsImage.png" className="max-w-md max-h-72" />
+                            <img src="./src/assets/ComponentsImage.png" className="max-w-md max-h-72" />
                         </div>
 
                     </div>
