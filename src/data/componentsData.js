@@ -856,21 +856,114 @@ fun ExampleComponent(modifier: Modifier) {
         category: "Media Control",
         categoryDescription: "Interfaces for controlling audio playback, featuring controls for play, pause, skip, volume, and track information display.",
         thumbnail: "src/assets/ThumbnailMediaControl.png",
+        display: true,
         components: [
             {
-                title: "Basic Authentication",
+                title: "Basic Media Controls",
                 description: "Basic Authentication",
                 code: `
 @Composable
-fun ExampleComponent(modifier: Modifier) {
-    Box(modifier) {
-        Text("hello")
-        Text("world")
+fun BasicMusicControls(modifier: Modifier = Modifier) {
+    var sliderValue by remember { mutableStateOf(0f) }
+    var isPlaying by remember { mutableStateOf(false) }
+    var shuffle by remember { mutableStateOf(0) }
+    var liked by remember { mutableStateOf(false) }
+
+    Column(modifier = modifier.width(300.dp)) {
+        Column {
+            Slider(
+                value = sliderValue,
+                onValueChange = { sliderValue = it },
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+        Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
+            IconButton(onClick = { shuffle = (shuffle + 1) % 3 }) {
+                Icon(if (shuffle == 0) painterResource(Res.drawable.shuffle) else if (shuffle == 1) painterResource(Res.drawable.repeat) else painterResource(Res.drawable.repeat_1), "Shuffle State" )
+            }
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(onClick = {}) {
+                Icon(painterResource(Res.drawable.skip_back), "Back")
+            }
+            IconButton(
+                onClick = { isPlaying = !isPlaying},
+                colors = IconButtonDefaults.filledIconButtonColors(containerColor = Color(0xFF1140bf), contentColor = Color.White)
+            ) {
+                Icon(if (isPlaying) painterResource(Res.drawable.pause) else painterResource(Res.drawable.play), "Play or Pause Button")
+            }
+            IconButton(onClick = {}) {
+                Icon(painterResource(Res.drawable.skip_forward), "Forward")
+            }
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(onClick = { liked = !liked}) {
+                Icon(if (liked) painterResource(Res.drawable.favorite_red) else painterResource(Res.drawable.favorite_outline), "Like", modifier = Modifier.size(24.dp), tint = if (liked) Color(0xFF1140bf) else Color.Black)
+            }
+        }
     }
 }
                 `,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard"
+                link: "https://brentcenci.github.io/Campose/?category=mediacontrols&component=basicmusiccontrols"
+            },
+            {
+                title: "Extended Media Controls",
+                description: "Basic Authentication",
+                code: `
+@Composable
+fun ExtendedMusicControls(modifier: Modifier = Modifier, duration: Int = 128, songTitle: String = "Song Title", artist: String = "Artist Name ft. Artist") {
+    var sliderValue by remember { mutableStateOf(0f) }
+    var isPlaying by remember { mutableStateOf(false) }
+    var shuffle by remember { mutableStateOf(0) }
+    var inPlaylist by remember { mutableStateOf(false) }
+
+    Column(modifier = modifier.width(300.dp)) {
+
+        Box(modifier = Modifier.fillMaxWidth().height(200.dp), contentAlignment = Alignment.Center) {
+            Column() {
+                Text(text = songTitle, fontSize = 40.sp, fontWeight = FontWeight.Bold, maxLines = 1, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+                Text(text = artist, maxLines = 1, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
             }
+
+        }
+
+        Slider(
+            value = sliderValue,
+            onValueChange = { sliderValue = it },
+            modifier = Modifier.fillMaxWidth(),
+            colors = SliderDefaults.colors(thumbColor = Color.Black, activeTrackColor = Color(0xFF5f6368))
+        )
+        Row(modifier = Modifier.fillMaxWidth().offset(y = (-12).dp), verticalAlignment = Alignment.Top) {
+            Text(text = "\${duration.times(sliderValue).roundToInt().floorDiv(60)}:\${duration.times(sliderValue).roundToInt().rem(60).toString().padStart(2, '0')}", fontSize = 12.sp)
+            Spacer(modifier = Modifier.weight(1f))
+            Text(text = "\${duration.floorDiv(60)}:\${(duration%60).toString().padStart(2, '0')}", fontSize = 12.sp)
+        }
+        Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
+            IconButton(onClick = { shuffle = (shuffle + 1) % 3 }) {
+                Icon(if (shuffle == 0) painterResource(Res.drawable.shuffle) else if (shuffle == 1) painterResource(Res.drawable.repeat) else painterResource(Res.drawable.repeat_1), "Shuffle State" )
+            }
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(onClick = {}) {
+                Icon(painterResource(Res.drawable.skip_back_filled), "Back")
+            }
+            IconButton(
+                onClick = { isPlaying = !isPlaying},
+                colors = IconButtonDefaults.filledIconButtonColors(containerColor = Color.Black, contentColor = Color.White),
+                modifier = Modifier.size(48.dp)
+            ) {
+                Icon(if (isPlaying) painterResource(Res.drawable.pause_filled_white_32) else painterResource(Res.drawable.play_filled_white_32), "Play or Pause Button")
+            }
+            IconButton(onClick = {}) {
+                Icon(painterResource(Res.drawable.skip_next_filled), "Forward")
+            }
+            Spacer(modifier = Modifier.weight(1f))
+            IconButton(onClick = { inPlaylist = !inPlaylist}) {
+                Icon(if (inPlaylist) painterResource(Res.drawable.list_check) else painterResource(Res.drawable.list_plus), "Add to Playlist")
+            }
+        }
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=mediacontrols&component=extendedmusiccontrols"
+            },
         ]
     },
     {
