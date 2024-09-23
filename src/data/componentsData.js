@@ -859,8 +859,10 @@ fun ExampleComponent(modifier: Modifier) {
         display: true,
         components: [
             {
-                title: "Basic Media Controls",
-                description: "Basic Authentication",
+                title: "Basic Music Controls",
+                description: "This is a simple component for controlling the music or audio as part of a music-streaming site or application. " +
+                    "The component features buttons to play or pause, skip forward, skip back, like or favourite a song, as well as control over shuffling or looping songs. " +
+                    "The component also features a simple slider, which can be configured alongside a backend to reflect the current progress through a piece of content.",
                 code: `
 @Composable
 fun BasicMusicControls(modifier: Modifier = Modifier) {
@@ -905,8 +907,10 @@ fun BasicMusicControls(modifier: Modifier = Modifier) {
                 link: "https://brentcenci.github.io/Campose/?category=mediacontrols&component=basicmusiccontrols"
             },
             {
-                title: "Extended Media Controls",
-                description: "Basic Authentication",
+                title: "Extended Music Controls",
+                description: "A more advanced music control interface, featuring similar controls to above however with additional feedback on the song or audio playing. " +
+                    "Contains a space for a title and artist name, a slider with the duration of the audio which updates dynamically, and again a row of actionable buttons for controlling playback. " +
+                    "Furthermore, this component is designed in a more sleek grayscale scheme with filled in buttons.",
                 code: `
 @Composable
 fun ExtendedMusicControls(modifier: Modifier = Modifier, duration: Int = 128, songTitle: String = "Song Title", artist: String = "Artist Name ft. Artist") {
