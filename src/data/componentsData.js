@@ -968,6 +968,29 @@ fun ExtendedMusicControls(modifier: Modifier = Modifier, duration: Int = 128, so
                 `,
                 link: "https://brentcenci.github.io/Campose/?category=mediacontrols&component=extendedmusiccontrols"
             },
+            {
+                title: "Volume Controls",
+                description: "A simple component for controlling the volume of a piece of audio content. Made with icons to clearly convey which side of the slider turns the volume up," +
+                    " and a Material 3 slider design useful for setting levels. This component is a perfect starting place for any other designs featuring a tuning slider you need.",
+                code: `
+@Composable
+fun VolumeControls(modifier: Modifier = Modifier) {
+    var sliderValue by remember { mutableStateOf(0f) }
+
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier.width(300.dp)) {
+        Icon(painterResource(Res.drawable.volume_mute), "Volume Off", modifier = Modifier.size(28.dp))
+        androidx.compose.material3.Slider(
+            value = sliderValue,
+            onValueChange = { sliderValue = it },
+            modifier = Modifier.weight(1f).padding(horizontal = 10.dp),
+            colors = androidx.compose.material3.SliderDefaults.colors(thumbColor = Color.Black, activeTrackColor = Color(0xFF5f6368))
+        )
+        Icon(painterResource(Res.drawable.volume_up), "Volume On", modifier = Modifier.size(28.dp))
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=mediacontrols&component=volumecontrols"
+            },
         ]
     },
     {
@@ -1003,25 +1026,143 @@ fun ExampleComponent(modifier: Modifier) {
                     "You can use this in e-commerce sites or in payment screens or wherever necessary.",
                 code: `
 @Composable
-fun BasicBreadcrumb(modifier: Modifier = Modifier, separator: String = "»", sections: List<String> = listOf("Cart", "Billing", "Shipping", "Payment")) {
+fun BasicBreadcrumb(
+    modifier: Modifier = Modifier,
+    separator: String = "»",
+    sections: List<String> = listOf("Cart", "Billing", "Shipping", "Payment"),
+    primaryColor: Color = Color(0xFF206FEE),
+    secondaryColor: Color = Color.Gray
+) {
     val current = remember { mutableIntStateOf(2) }
     Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         sections.forEachIndexed { index, section ->
             Text(
                 text = section,
                 fontWeight = if (index == current.value) FontWeight.Bold else FontWeight.Normal,
-                color = if (current.value < index) Color.LightGray else Color.Blue,
+                color = if (current.value < index) secondaryColor else primaryColor,
                 modifier = Modifier.clickable { current.value = index }
             )
-            if (index != sections.size-1) {
-                Text(separator, color = Color.LightGray)
+            if (index != sections.size - 1) {
+                Text(separator, color = secondaryColor)
             }
         }
     }
 }
                 `,
                 link: "https://brentcenci.github.io/Campose/?category=breadcrumbs&component=basicbreadcrumb"
+            },
+            {
+                title: "Basic Breadcrumbs with Icons",
+                description: "This is a slightly extended implementation of a breadcrumb component above featuring icons for each of the nodes, which highlight and can be interacted with accordingly. " +
+                    "As above, you can use this in e-commerce sites or in payment screens or wherever necessary.",
+                code: `
+@Composable
+fun BasicBreadcrumbWithIcon(
+    modifier: Modifier = Modifier,
+    separator: String = "»",
+    sections: List<String> = listOf(
+        "Home",
+        "Search",
+        "Cart",
+        "Purchase Successful"
+    ),
+    icons: List<ImageVector> = listOf(
+        Icons.Default.Home,
+        Icons.Default.Search,
+        Icons.Default.ShoppingCart,
+        Icons.Default.ThumbUp
+    ),
+    primaryColor: Color = Color(0xFF206FEE),
+    secondaryColor: Color = Color.Gray
+) {
+    val current = remember { mutableIntStateOf(2) }
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        for (index in sections.indices) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.clickable { current.value = index }) {
+                Icon(
+                    icons[index],
+                    "",
+                    tint = if (current.value < index) secondaryColor else primaryColor,
+                    modifier = Modifier.size(16.dp)
+                )
+                Text(
+                    text = sections[index],
+                    fontWeight = if (index == current.value) FontWeight.Bold else FontWeight.Normal,
+                    color = if (current.value < index) secondaryColor else primaryColor,
+                )
             }
+            if (index != sections.size - 1) {
+                Text(separator, color = secondaryColor)
+            }
+        }
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=breadcrumbs&component=basicbreadcrumbwithicon"
+            },
+            {
+                title: "Bubble Breadcrumbs",
+                description: "This is a more aesthetically pleasing breadcrumbs design, with more spacing for each node and a nice bubble around the selected breadcrumb.",
+                code: `
+@Composable
+fun BubbleBreadcrumbs(
+    modifier: Modifier = Modifier,
+    separator: String = "»",
+    sections: List<String> = listOf(
+        "Home",
+        "Search",
+        "Cart",
+        "Purchase Successful"
+    ),
+    icons: List<ImageVector> = listOf(
+        Icons.Default.Home,
+        Icons.Default.Search,
+        Icons.Default.ShoppingCart,
+        Icons.Default.ThumbUp
+    ),
+    primaryColor: Color = Color(0xFF206FEE),
+    secondaryColor: Color = Color.Gray
+
+) {
+    val current = remember { mutableIntStateOf(2) }
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        for (index in sections.indices) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.background(if (current.value == index) primaryColor else Color.Transparent, RoundedCornerShape(50)).clip(
+                    RoundedCornerShape(50)).clickable { current.value = index }.padding(8.dp)
+            ) {
+                Icon(
+                    icons[index],
+                    "",
+                    tint = if (current.value < index) secondaryColor else if (current.value == index) Color.White else primaryColor,
+                    modifier = Modifier.size(16.dp)
+                )
+                Text(
+                    text = sections[index],
+                    fontWeight = if (index == current.value) FontWeight.Bold else FontWeight.Normal,
+                    color = if (current.value < index) secondaryColor else if (current.value == index) Color.White else primaryColor,
+                )
+            }
+            if (index != sections.size - 1) {
+                Text(separator, color = secondaryColor)
+            }
+        }
+    }
+}
+                `,
+                link: "https://brentcenci.github.io/Campose/?category=breadcrumbs&component=bubblebreadcrumbs"
+            },
         ]
     },
     {

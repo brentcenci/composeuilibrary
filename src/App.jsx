@@ -8,6 +8,7 @@ import ScreensScreen from "./screens/ScreensScreen.jsx";
 import Home from "./screens/Home.jsx";
 import Components from "./screens/Components.jsx";
 import Screens from "./screens/Screens.jsx";
+import TestingLinesDesignFile from "./components/TestingLinesDesignFile.jsx";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <>
         <Router>
             <TopNavBar/>
+            {/*<TestingLinesDesignFile/>*/}
             <Routes>
                 <Route path="/oldhome" element={<HomeScreen/>}/>
                 <Route path="/" element={<Home />}/>
