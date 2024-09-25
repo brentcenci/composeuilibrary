@@ -12,11 +12,13 @@ export const componentsData = [
                 code:
                     `@Composable
 fun Card(modifier: Modifier = Modifier, title: String, content: String) {
-    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).width(300.dp).padding(20.dp)) {
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(text = title, fontSize = 28.sp, color = Color.DarkGray, fontWeight = FontWeight.Bold)
-            Text(text = content, color = Color.DarkGray)
-        }
+    Column(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).width(300.dp)
+        .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+        Text(
+            text = title,
+            fontSize = 20.sp,
+        )
+        Text(text = content, color = Color(0xFF6b6b6b))
     }
 }`,
                 link: "https://brentcenci.github.io/Campose/?category=cards&component=basiccard",
@@ -28,61 +30,28 @@ fun Card(modifier: Modifier = Modifier, title: String, content: String) {
                     "Use this in applications where you want to grab the user's attention with a charming image.",
                 code:
                     `@Composable
-fun ImageCard(title: String, content: String, imageUrl: String) {
-    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).width(300.dp).padding(20.dp)) {
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            AsyncImage(
-                model = imageUrl,
-                contentDescription = "Placeholder",
-                imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
-                modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.Crop
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(text = title, fontSize = 28.sp, color = Color.DarkGray, fontWeight = FontWeight.Bold)
-            Text(text = content, color = Color.DarkGray)
+fun CardWithImage(modifier: Modifier = Modifier, imageUrl: String, title: String, content: String) {
+    Column(
+        modifier = Modifier.width(300.dp).background(Color.White, RoundedCornerShape(20.dp))
+            .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)
+    ) {
+        AsyncImage(
+            model = imageUrl,
+            contentDescription = "Placeholder",
+            imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
+            modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
+            contentScale = ContentScale.Crop
+        )
+        Row {
+            Text(title, fontSize = 20.sp)
         }
+        Text(
+            content,
+            color = Color(0xFF6b6b6b)
+        )
     }
 }`,
                 link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecard"
-            },
-            {
-                title: "Card with Badges",
-                description: "This card features some simple chips and badges to showcase certain properties; " +
-                    "such as whether the card is depicting a new release item, a sale, or even categories such as vegan or vegetarian. " +
-                    "Use this to call to attention these properties on the main card.",
-                code:
-                    `@Composable
-fun ImageCardWithBadges(title: String, content: String, imageUrl: String, titleBadge: String, contentBadges: List<String>) {
-    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).width(300.dp).padding(20.dp)) {
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            AsyncImage(
-                model = imageUrl,
-                contentDescription = "Placeholder",
-                imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
-                modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.Crop
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Text(text = title, fontSize = 28.sp, color = Color.DarkGray, fontWeight = FontWeight.Bold)
-                Box(modifier = Modifier.border(width = 2.dp, Color.Red, RoundedCornerShape(50)).padding(horizontal = 6.dp, vertical = 4.dp)) {
-                    Text(text = titleBadge, color = Color.Red, fontSize = 16.sp)
-                }
-            }
-            Text(text = content, color = Color.DarkGray)
-            Row(horizontalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.padding(top = 16.dp)) {
-                Spacer(modifier = Modifier.weight(1f))
-                contentBadges.forEach {
-                    Box(modifier = Modifier.background(Color.hsl(267F, 1f, 0.4f), RoundedCornerShape(50)).padding(4.dp)){
-                        Text(text = it, color = Color.White)
-                    }
-                }
-            }
-        }
-    }
-}`,
-                link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecardwithbadges"
             },
             {
                 title: "Card with Button",
@@ -90,26 +59,188 @@ fun ImageCardWithBadges(title: String, content: String, imageUrl: String, titleB
                     "perfect for any desired call to action.",
                 code:
                     `@Composable
-fun ImageCardWithButton(title: String, content: String, imageUrl: String, buttonText: String) {
-    Box(modifier = Modifier.background(Color.White, RoundedCornerShape(20.dp)).width(300.dp).padding(20.dp)) {
-        Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            AsyncImage(
-                model = imageUrl,
-                contentDescription = "Placeholder",
-                imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
-                modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.Crop
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            Text(text = title, fontSize = 28.sp, color = Color.DarkGray, fontWeight = FontWeight.Bold)
-            Text(text = content, color = Color.DarkGray)
-            Button( onClick = {}, modifier = Modifier.align(Alignment.End).padding(top = 16.dp), shape = RoundedCornerShape(10.dp)) {
-                Text(text = buttonText)
+fun CardWithImageAndButton(modifier: Modifier = Modifier, imageUrl: String, title: String, content: String, buttonText: String) {
+    Column(
+        modifier = Modifier.width(300.dp).background(Color.White, RoundedCornerShape(20.dp))
+            .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)
+    ) {
+        AsyncImage(
+            model = imageUrl,
+            contentDescription = "Placeholder",
+            imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
+            modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
+            contentScale = ContentScale.Crop
+        )
+        Row {
+            Text(title, fontSize = 20.sp)
+        }
+        Text(
+            content,
+            color = Color(0xFF6b6b6b)
+        )
+        Row {
+            Spacer(modifier=Modifier.weight(1f))
+            Button(onClick = {}, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2157eb), contentColor = Color.White), shape = RoundedCornerShape(10.dp)) {
+                Text(buttonText, textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
             }
         }
     }
 }`,
                 link: "https://brentcenci.github.io/Campose/?category=cards&component=imagecardwithbutton"
+            },
+            {
+                title: "Sale Card",
+                description: "This card is the same as the image card however now features a simple but attention-grabbing button, " +
+                    "perfect for any desired call to action.",
+                code:
+                    `@Composable
+fun SaleCard(modifier: Modifier = Modifier, imageUrl: String) {
+    Column(
+        modifier = Modifier.width(300.dp).background(Color.White, RoundedCornerShape(20.dp))
+            .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)
+    ) {
+        AsyncImage(
+            model = imageUrl,
+            contentDescription = "Placeholder",
+            imageLoader = ImageLoader(context = PlatformContext.INSTANCE),
+            modifier = Modifier.fillMaxWidth().height(200.dp).clip(RoundedCornerShape(10.dp)),
+            contentScale = ContentScale.Crop
+        )
+        Row {
+            Text("Product Name", fontSize = 20.sp)
+            Spacer(Modifier.weight(1f))
+            Text("$39.99", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        }
+        Text(
+            "This is a basic description of a sale product. This product has these features, and looks stylish both on you, in your car and also in your living room.",
+            color = Color(0xFF6b6b6b)
+        )
+        Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
+            Button(onClick = {}, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(contentColor = Color.Red, containerColor = Color.White), shape = RoundedCornerShape(10.dp)) {
+                Text("Remove", textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
+            }
+            Button(onClick = {}, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2157eb), contentColor = Color.White), shape = RoundedCornerShape(10.dp)) {
+                Text("Purchase", textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
+            }
+        }
+    }
+}`,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=salecard"
+            },
+            {
+                title: "Access Denied Card",
+                description: "This card is the same as the image card however now features a simple but attention-grabbing button, " +
+                    "perfect for any desired call to action.",
+                code:
+                    `@Composable
+fun AccessCard(modifier: Modifier = Modifier) {
+    Column(modifier = Modifier.width(300.dp).background(Color.White, RoundedCornerShape(20.dp))
+        .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Icon(painterResource(Res.drawable.alert_triangle), "Alert Icon", tint = Color(0xFF2157eb), modifier = Modifier.padding(10.dp).size(32.dp))
+            Text("Permission required", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+        }
+        Text("You do not have permission to access this resource. \\n\\nPlease contact the owner for permission.", color = Color(0xFF6b6b6b))
+        Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
+            Button(onClick = {}, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(contentColor = Color.Red, containerColor = Color.White), shape = RoundedCornerShape(10.dp)) {
+                Text("Cancel", textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
+            }
+            Button(onClick = {}, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2157eb), contentColor = Color.White), shape = RoundedCornerShape(10.dp)) {
+                Text("Okay", textAlign = TextAlign.Center, fontWeight = FontWeight.Bold)
+            }
+        }
+    }
+}`,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=accesscard"
+            },
+            {
+                title: "Pricing Card",
+                description: "This card is the same as the image card however now features a simple but attention-grabbing button, " +
+                    "perfect for any desired call to action.",
+                code:
+                    `@Composable
+fun PricingCard(
+    modifier: Modifier = Modifier,
+    icon: DrawableResource,
+    features: List<String> = listOf(
+        "All analytical features",
+        "Up to 5,000 visits per day",
+        "Up to 3 team members",
+        "Normal support"
+    ),
+    primaryColor: Color = Color(0xFF751dc2),
+    forText: String,
+    planNameText: String,
+    description: String,
+    price: Int
+) {
+    Column(
+        modifier = modifier.width(300.dp).background(Color.White, RoundedCornerShape(20.dp))
+            .padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(
+                modifier = Modifier.background(
+                    Color.LightGray.copy(alpha = 0.2f),
+                    RoundedCornerShape(5.dp)
+                ).padding(10.dp)
+            ) {
+                Icon(
+                    painterResource(icon),
+                    "",
+                    tint = primaryColor,
+                    modifier = Modifier.size(32.dp)
+                )
+            }
+            Column(modifier = Modifier.padding(start = 10.dp)) {
+                Text(forText, color = Color(0xFF6b6b6b))
+                Text(planNameText, fontWeight = FontWeight.Bold, fontSize = 24.sp)
+            }
+        }
+        Text(description, color = Color(0xFF6b6b6b))
+        Row(verticalAlignment = Alignment.Bottom) {
+            Text("$$price", fontSize = 40.sp, fontWeight = FontWeight.Bold)
+            Text("/monthly", color = Color(0xFF6b6b6b))
+        }
+        Text("What's included?", fontWeight = FontWeight.Bold)
+
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            features.forEach {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    Icon(
+                        Icons.Default.CheckCircle,
+                        "",
+                        tint = primaryColor,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Text(it)
+                }
+            }
+        }
+        Button(
+            onClick = {},
+            modifier = Modifier.padding(10.dp).fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = primaryColor,
+                contentColor = Color.White
+            ),
+            shape = RoundedCornerShape(50)
+        ) {
+            Text(
+                "Get Started",
+                color = Color.White,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp
+            )
+        }
+    }
+}`,
+                size: 700,
+                link: "https://brentcenci.github.io/Campose/?category=cards&component=pricingcard"
             },
             {
                 title: "Small Card with Side Image",
