@@ -10,15 +10,15 @@ const Home = () => {
                         <br/>
                         <div className="flex flex-col md:flex-row space-x-4">
                             <a
-                                href="/"
-                                className="mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                                Get Access »
+                                href="/components"
+                                className="mt-40 text-center bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-white tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                                View Components »
                             </a>
-                            <a
+                            {/*<a
                                 href="/components"
                                 className="md:mt-40 bg-blue-gradient bg-left bg-[length:200%_200%] hover:bg-right transition-all duration-700 ease-in-out py-2 md:py-3 lg:py-5 xl:py-7 px-4 md:px-6 lg:px-8 xl:px-10 rounded-full text-transparent bg-clip-text tracking-tight font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl">
                                 View Components »
-                            </a>
+                            </a>*/}
                         </div>
 
                     </div>
