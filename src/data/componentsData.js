@@ -155,8 +155,8 @@ fun AccessCard(modifier: Modifier = Modifier) {
             },
             {
                 title: "Pricing Card",
-                description: "This card is the same as the image card however now features a simple but attention-grabbing button, " +
-                    "perfect for any desired call to action.",
+                description: "This is the perfect component for a sales site or application, featuring a product title, price, description, and buttons below " +
+                    "for any appropriate actions. Customise this further to add the item to a cart, select a quantity or tap to expand.",
                 code:
                     `@Composable
 fun PricingCard(
