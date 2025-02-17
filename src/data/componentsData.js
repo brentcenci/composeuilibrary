@@ -2,7 +2,7 @@ export const componentsData = [
     {
         category: "Cards",
         categoryDescription: "Versatile containers for displaying grouped content, such as text, images, and actions, in a clean, organized format.",
-        thumbnail: "src/assets/ThumbnailCard.png",
+        thumbnail: "/assets/ThumbnailCard.png",
         display: true,
         components: [
             {
@@ -364,7 +364,7 @@ fun VideoCard(title: String, summary: String, length: String, imageUrl: String, 
         category: "Comments and Reviews",
         categoryDescription: "A selection of complete components and elements that may be found in comment sections or review areas of an application. " +
             "They should be used to provide the opportunity for users to give their thoughts on a piece of content or media.",
-        thumbnail: "src/assets/ThumbnailCommentsReview.png",
+        thumbnail: "/assets/ThumbnailCommentsReview.png",
         display: true,
         components: [
             {
@@ -597,7 +597,7 @@ fun StarRatingReview(name: String, userImage: String, rating: Int, message: Stri
     {
         category: "Authentication",
         categoryDescription: "Components designed for user login, registration, and password recovery, ensuring secure access to applications.",
-        thumbnail: "src/assets/ThumbnailAuthentication.png",
+        thumbnail: "/assets/ThumbnailAuthentication.png",
         display: true,
         components: [
             {
@@ -795,7 +795,7 @@ fun BasicSignup(modifier: Modifier = Modifier, title: String = "Sign Up", subtit
     {
         category: "Accordions",
         categoryDescription: "Vertically expanding sections that expand on click to reveal more information.",
-        thumbnail: "src/assets/ThumbnailAccordion.png",
+        thumbnail: "/assets/ThumbnailAccordion.png",
         display: true,
         components: [
             {
@@ -817,7 +817,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Carousels",
         categoryDescription: "Custom designed toggle switches to impress your users over the default.",
-        thumbnail: "src/assets/ThumbnailCarousel.png",
+        thumbnail: "/assets/ThumbnailCarousel.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -838,7 +838,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Toggles",
         categoryDescription: "Custom designed toggle switches to impress your users over the default.",
-        thumbnail: "src/assets/ThumbnailToggles.png",
+        thumbnail: "/assets/ThumbnailToggles.png",
         display: true,
         components: [
             {
@@ -942,7 +942,7 @@ fun BasicToggleWithContent(
     {
         category: "Expanding Sections",
         categoryDescription: "Components which expand dynamically on click horizontally - a perfect component for displaying cards which reveal more detail when pressed.",
-        thumbnail: "src/assets/ThumbnailExpandingSections.png",
+        thumbnail: "/assets/ThumbnailExpandingSections.png",
         display: true,
         components: [
             {
@@ -965,7 +965,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Timeline",
         categoryDescription: "Sequential layouts for showcasing chronological events or steps in a process, often used in history or progress tracking.",
-        thumbnail: "src/assets/ThumbnailTimeline.png",
+        thumbnail: "/assets/ThumbnailTimeline.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -986,7 +986,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Media Control",
         categoryDescription: "Interfaces for controlling audio playback, featuring controls for play, pause, skip, volume, and track information display.",
-        thumbnail: "src/assets/ThumbnailMediaControl.png",
+        thumbnail: "/assets/ThumbnailMediaControl.png",
         display: true,
         components: [
             {
@@ -1127,7 +1127,7 @@ fun VolumeControls(modifier: Modifier = Modifier) {
     {
         category: "Badges",
         categoryDescription: "Small, interactive elements representing tags, categories, or actions, often used for filtering or selection in a compact format.",
-        thumbnail: "src/assets/ThumbnailBadges.png",
+        thumbnail: "/assets/ThumbnailBadges.png",
         components: [
             {
                 title: "Basic Authentication",
@@ -1148,7 +1148,7 @@ fun ExampleComponent(modifier: Modifier) {
     {
         category: "Breadcrumbs",
         categoryDescription: "Simple horizontal components representing stages of navigation through a process.",
-        thumbnail: "src/assets/ThumbnailBreadcrumbs.png",
+        thumbnail: "/assets/ThumbnailBreadcrumbs.png",
         display: true,
         components: [
             {
@@ -1299,7 +1299,7 @@ fun BubbleBreadcrumbs(
     {
         category: "Search Bars and Autocomplete",
         categoryDescription: "Simple components using Textfields that take in a query and execute search functionality, perfect for finding matching text in a database or list.",
-        thumbnail: "src/assets/ThumbnailSearchbarsAndAutocomplete.png",
+        thumbnail: "/assets/ThumbnailSearchbarsAndAutocomplete.png",
         display: true,
         components: [
             {
