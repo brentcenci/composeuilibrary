@@ -1,3 +1,5 @@
+import ComponentsImage from "/src/assets/ComponentsImage.png"
+
 const Home = () => {
     return (
         <>
@@ -24,7 +26,7 @@ const Home = () => {
                     </div>
                     <div className="hidden md:flex justify-center items-start md:w-1/3">
                         <img
-                            src="./src/assets/ComponentsImage.png"
+                            src={ComponentsImage}
                             alt="Header Image"
                             className="w-full h-auto"
                         />
@@ -156,7 +158,7 @@ const Home = () => {
                             </a>
                         </div>
                         <div className="w-1/4 lg:w-1/2 hidden lg:flex justify-center items-center">
-                            <img src="./src/assets/ComponentsImage.png" className="max-w-md max-h-72" />
+                            <img src={ComponentsImage} className="max-w-md max-h-72" />
                         </div>
 
                     </div>
